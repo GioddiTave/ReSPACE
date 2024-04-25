@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1D2F3B;
+    color: #F2D0B4;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1D2F3B;
+    overflow-x: hidden;
+    transition: 0.5s; 
+    padding-top: 60px;
+}
+
+.sidenav .logo {
+    text-align: center; /* Logo in der Mitte zentrieren */
+    padding: 10px;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+}
+
+.sidenav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #F2D0B4;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    background-color: #1D2F3B;
+}
+
+.main-content {
+    transition: margin-left 0.5s;
+    padding: 20px;
+}
+
+.openbtn {
+    font-size: 24px;
+    cursor: pointer;
+}

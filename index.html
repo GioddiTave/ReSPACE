@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Linke Seiten-Navbar</title>
+    <link rel="stylesheet" type="text/css" href="style.css"> <!-- Link zur CSS-Datei -->
+    <script src="script.js" defer></script> <!-- Link zur JavaScript-Datei -->
+</head>
+<body>
+    <div class="sidenav" id="sidenav">
+        <div class="logo">
+            <a href="#home">LOGO</a> <!-- Logo an oberster Stelle -->
+        </div>
+        <button class="closebtn" onclick="toggleSidenav()">&times;</button>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="main-content">
+        <button class="openbtn" onclick="toggleSidenav()">☰</button> <!-- Hamburger-Icon -->
+        <!-- Beispielinhalt -->
+        <h1>Willkommen bei SPACE</h1>
+        <p>Inhalte hier...</p>
+    </div>
+</body>
