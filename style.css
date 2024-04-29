@@ -16,6 +16,9 @@ html, body {
     display: grid;
     grid-template-columns: repeat(14, 100vw);  
     scroll-behavior: smooth; 
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: calc(300vw * number_of_sections); /* Adjust 'number_of_sections' to match your actual number of horizontal sections */
 }
 
 /* Navbar style */
