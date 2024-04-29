@@ -1,26 +1,276 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Linke Seiten-Navbar</title>
-    <link rel="stylesheet" type="text/css" href="style.css"> <!-- Link zur CSS-Datei -->
-    <script src="script.js" defer></script> <!-- Link zur JavaScript-Datei -->
+    <title>Horizontal Scroll Layout</title>
+    <link rel="stylesheet" type="text/css" href="style.css"> <!-- External CSS link -->
+    <script src="script.js" defer></script> <!-- External JavaScript link -->
 </head>
 <body>
-    <div class="sidenav" id="sidenav">
-        <div class="logo">
-            <a href="#home">LOGO</a> <!-- Logo an oberster Stelle -->
-        </div>
-        <button class="closebtn" onclick="toggleSidenav()">&times;</button>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">LOGO</div>
+        <div class="hamburger">&#9776;</div> <!-- Hamburger icon -->
     </div>
 
-    <div class="main-content">
-        <button class="openbtn" onclick="toggleSidenav()">☰</button> <!-- Hamburger-Icon -->
-        <!-- Beispielinhalt -->
-        <h1>Willkommen bei SPACE</h1>
-        <p>Inhalte hier...</p>
+    <!-- Horizontal Scroll Container -->
+    <div class="h-scroll">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-text">
+                <h1>SPACE</h1>
+                <p>Scroll</p> <!-- Placeholder for Icon -->
+            </div>
+        </div>
+
+        <!-- Transition 1 -->
+        <div class="transition">
+            <div class="transition-image">
+                <img src="./Bilder/transition.svg" alt="Transition 1"> <!-- SVG Placeholder -->
+            </div>
+        </div>
+
+        <!-- Illustration 1 -->
+        <div class="illustration">
+            <div class="chapter-image">
+                <img src="./Bilder/Welcome.svg" alt="Chapter 1"> <!-- SVG Placeholder -->
+            </div>
+        </div>
+
+        <!-- Chapter 1: Welcome -->
+        <div class="chapter">
+            <div class="chapter-text">
+                <h2>Welcome</h2>
+                <div class="introduction">Welcome, Explorer! Prepare for an extraordinary 
+                    journey through the cosmos. This isn't just a website; it's your 
+                    gateway to the stars, the planets, and the mysteries of space. 
+                    As you step into this world, you're not just a visitor—you're an 
+                    adventurer, ready to explore the far reaches of the universe.
+                    <br><br>
+                    But before you venture into the vast unknown, let's go over a 
+                    few ground rules to ensure your journey is both safe and thrilling. 
+                    Space is full of surprises, so keep your wits about you and enjoy 
+                    the adventure!
+                </div>
+                <h3>Security in Space</h3>
+                <div class="chapter-text-image">
+                    <img src="./Bilder/Black hole.svg" alt="Black hole">
+                    <p>What falls into the black hole, stays in the black hole.</p>
+                </div>
+                <div class="chapter-text-image">
+                    <img src="./Bilder/Sticky.svg" alt="Sticky">
+                    <p>If you find something dark and sticky, don't touch it—it might be friendly, but it could also eat your face.</p>
+                </div>
+                <div class="chapter-text-image">
+                    <img src="./Bilder/Alien.svg" alt="Alien">
+                    <p>In space, everyone is a neighbor - so be nice to the aliens.</p>
+                </div>
+                <div class="chapter-text-image">
+                    <img src="./Bilder/Pizza.svg" alt="Pizza">
+                    <p>No Pizza Deliveries Beyond the asteroid Belt.</p>
+                </div>
+                <div class="chapter-text-image">
+                    <img src="./Bilder/Kompas.svg" alt="Lost">
+                    <p>If you get lost and land on an unknown planet, remember to follow the 'Lost and Found' protocol.</p>
+                </div>
+                <div class="Button">Don‘t forget to put your helmet on!</div>
+            </div>
+        </div>
+
+        <!-- Transition 2 -->
+        <div class="transition">
+            <div class="transition-image">
+                <img src="./Bilder/transition.svg" alt="Transition 2"> <!-- SVG Placeholder -->
+            </div>
+        </div>
+
+        <!-- Illustration 2 -->
+        <div class="illustration">
+            <div class="chapter-image">
+                <img src="./Bilder/Nasa.svg" alt="Chapter 2"> <!-- SVG Placeholder -->
+            </div>
+        </div>
+
+        <!-- Chapter 2: NASA -->
+        <div class="chapter">
+            <div class="chapter-text">
+                <h2>NASA</h2>
+                <div class="history">
+                    You enter a world where space exploration comes alive. 
+                    The walls are adorned with stories of groundbreaking 
+                    achievements that have shaped our understanding of the universe. 
+                    As you move through the corridor, the echoes of rockets 
+                    launching from Cape Canaveral fill the air, and you can 
+                    almost feel the excitement of mission control during Apollo. 
+                    The spirit of discovery is palpable.
+                    <br><br>
+                    As you continue, you're surrounded by the latest 
+                    Mars rovers and other marvels of NASA technology. 
+                    It's like meeting the pioneers of space travel, 
+                    each exhibit unveiling a new facet of NASA's 
+                    journey—from the early days of the Mercury missions 
+                    to the latest plans for returning to the Moon and beyond.
+                    <br><br>
+                    Be sure to stop by the "NASA News" section, where you can 
+                    catch the latest updates on eclipses, blue moons, and upcoming 
+                    rocket launches. Stay in tune with the cosmos, and don't miss 
+                    out on the awe-inspiring events that bring us closer to the stars. 
+                </div>
+                <h3>NASA News</h3>
+                <div class="news">
+                    <div class="chapter-text">
+                        <p>Solar Eclipse</p>
+                    </div>
+                    <div class="chapter-text">
+                        <p>Meteorid Shower</p>
+                    </div>
+                    <div class="chapter-text">
+                        <p>Rocket launches</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transition 3 -->
+        <div class="transition">
+            <div class="transition-image">
+                <img src="./Bilder/transition.svg" alt="Transition 3"> <!-- SVG Placeholder -->
+            </div>
+        </div>
+
+        <!-- Illustration 3 -->
+        <div class="illustration">
+            <div class="chapter-image">
+                <img src="./Bilder/SciFi.svg" alt="Chapter 3"> <!-- SVG Placeholder -->
+            </div>
+        </div>
+
+        <!-- Chapter 3: SciFi -->
+        <div class="chapter">
+            <div class="chapter-text">
+                <h2>SciFi</h2>
+                <div class="adventure">
+                    As you step into the Sci-Fi space, an alien gestures 
+                    for you to come forward, inviting you to explore the 
+                    wonders of science fiction. The setting feels both 
+                    familiar and otherworldly—a perfect blend of the known 
+                    and the unknown. It’s as if you're stepping into a story 
+                    where anything is possible, and the journey ahead is as 
+                    vast as the universe itself.
+                    <br><br>
+                    Follow the beams of light into the heart of the Sci-Fi Space, 
+                    where you'll discover stories that transcend the boundaries 
+                    of reality, playlists that set the mood for interstellar travel, 
+                    and encounters with characters who have journeyed across galaxies. 
+                    This is your gateway to a realm where imagination reigns supreme, 
+                    and the stars are just the beginning. Get ready to embark on an 
+                    adventure that will take you to the edge of the cosmos and beyond.
+                </div>
+                <div class="Spceplaylist">There is alway SPACE for a PLaylist!</div>
+                
+            </div>
+            <h3>Space Playlist</h3>
+                <div class="galactic-playlist">Cosmic Chillout: Relaxing Tunes for Zero Gravity</div>
+             <h3>Stories of Travelers</h3>
+                <div class="traveler-stories1">
+                    Number of Aliens met: <br>
+                    Numerous encounters, though precise quantification 
+                    is illogical.
+                    
+                    Skill you learned in space:<br>
+                    Mastery of interstellar diplomacy 
+                    and logic-based problem-solving
+
+                    Best space travel snack:<br>
+                    Nutritional efficiency supersedes 
+                    personal preference, but if required, 
+                    Vulcan plomeek soup provides sustenance 
+                    and comfort.
+
+                    If you were stranded on a deserted moon, 
+                    what three items would you want with you?<br>
+                    1.Tricorder for data analysis and communication.<br>
+                    2.Phaser for defense and signaling.<br>
+                    3.Emergency survival kit containing rations, shelter, 
+                    and medical supplies.
+
+                    Zero gravity dance move:<br>
+                    Dancing is a highly illogical activity, but if compelled, 
+                    a precise and controlled series of movements resembling 
+                    the Vulcan meditation ritual.
+
+                </div>
+                <div class="traveler-stories1">
+                    Number of Aliens met: <br>
+                    Zero, unless you count the 
+                    potatoes I've been growing. 
+                    They're out of this world, though.
+                    
+                    Skill you learned in space:<br>
+                    Botanical wizardry and MacGyver-level improvisation.
+
+                    Best space travel snack:<br>
+                    Potato chips, of course. 
+                    Grown, sliced, and fried in the vacuum of space.
+
+                    If you were stranded on a deserted moon, 
+                    what three items would you want with you?<br>
+                    1.My trusty botanist's kit, complete with 
+                    Martian soil samples and potato seeds.<br>
+                    2.Communications equipment to establish 
+                    contact with Earth and potential rescue missions.<br>
+                    3.An abundance of duct tape. Seriously, 
+                    duct tape fixes everything.<br>
+
+                    Zero gravity dance move:<br>
+                    Dancing is a highly illogical activity, 
+                    but if compelled, a precise and controlled 
+                    series of movements resembling the Vulcan 
+                    meditation ritual.
+
+                </div>
+        </div>
+
+        <!-- Transition 4 -->
+        <div class="transition">
+            <div class="transition-image">
+                <img src="./Bilder/transition.svg" alt="Transition 4"> <!-- SVG Placeholder -->
+            </div>
+        </div>
+
+        <!-- Illustration 4 -->
+        <div class="illustration">
+            <div class="chapter-image">
+                <img src="./Bilder/Goodby.svg" alt="Chapter 4"> <!-- SVG Placeholder -->
+            </div>
+        </div>
+
+        <!-- Chapter 4: Hello World! -->
+        <div class="chapter">
+            <div class="chapter-text">
+                <h2>Hello World!</h2>
+                <div class="goodbye">
+                    Now that you can see planet Earth again, 
+                    it's time to say goodbye to your space adventure. 
+                    It was a pleasure having you on board, and if you 
+                    ever feel the need for another cosmic journey, 
+                    we're always here, ready to welcome you back. 
+                    Thanks for joining us on this incredible voyage. 
+                    Until next time, safe travels, and remember—the 
+                    stars are always waiting for you.
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-text">Hochschule Furtwangen Robert-Gerwig-Platz 1, 78120 Furtwangen, Germany<br>
+                Phone: +49 7723 920-0 | Email: info@hs-furtwangen.de<br>
+                © 2024 Hochschule Furtwangen. All rights reserved.<br>
+                About Us | Programs | Admissions | Contact Us | FAQ | Connect with Us<br>
+                Privacy Policy | Terms of Service | Accessibility | Sitemap | Newsletter Sign-up
+            </div>
+        </div>
     </div>
 </body>
+</html>

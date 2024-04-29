@@ -1,54 +1,160 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #1D2F3B;
-    color: #F2D0B4;
+    overflow-x: scroll; /* Allows horizontal scrolling */
+    font-family: Arial, sans-serif;
 }
 
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
+/* Horizontal Scroll Container */
+.h-scroll {
+    display: grid;
+   /*  grid-template-rows: repeat(6, 1fr); 
+    grid-template-columns: repeat(14, 12fr);
+    grid-template-areas: 
+        "hero transition1 illustration1"       
+        "hero transition1 illustration1"         
+        "hero transition1 illustration1"  
+        "hero transition1 chapter1"     
+        "hero transition1 transition2"  
+        "hero transition1 chapter2"     
+        "hero transition1 transition3"  
+        "hero transition1 chapter3"     
+        "hero transition1 transition4"  
+        "hero transition1 chapter4"     
+        "hero transition1 footer";   */    
+    grid-template-columns: repeat(14, 100vw);  /* Horizontal scroll with 14 columns */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Navbar style */
+.navbar {
+    position: fixed; /* Keeps the navbar fixed on the left */
     top: 0;
     left: 0;
-    background-color: #1D2F3B;
-    overflow-x: hidden;
-    transition: 0.5s; 
-    padding-top: 60px;
+    height: 100vh; /* Full viewport height */
+    width: 5rem; /* Fixed width */
+    /* background-color: #1D2F3B; */
+    color: #F2D0B4; /* Light text */
+    display: flex;
+    flex-direction: column; /* Vertical alignment */
+    justify-content: flex-start; /* Aligns at the top */
+    align-items: flex-start; /* Aligns to the left */
+    padding: 1rem; /* Padding for the navbar */
 }
 
-.sidenav .logo {
-    text-align: center; /* Logo in der Mitte zentrieren */
-    padding: 10px;
+/* Hero Section */
+.hero {
+    /* grid-area: hero; */
+    background-color: #1D2F3B; /* Dark background */
+    color: #F2D0B4; /* Light text */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
 }
 
-.sidenav .closebtn {
-    position: absolute;
-    top: 10px;
-    right: 25px;
-    font-size: 36px;
+.hero h1 {
+    font-size: 4rem; /* Large font for 'SPACE' */
 }
 
-.sidenav a {
-    padding: 10px 15px;
-    text-decoration: none;
-    color: #F2D0B4;
-    display: block;
-    transition: 0.3s;
+.hero p {
+    font-size: 1.5rem; /* Smaller font for 'Scroll' */
 }
 
-.sidenav a:hover {
-    background-color: #1D2F3B;
+.chapter-image img {
+    height: 100vh; 
+    object-fit: cover;
+    
+}
+/* Chapter Text Styling */
+.chapter-text {
+    padding: 1rem; /* Padding for chapter text */
 }
 
-.main-content {
-    transition: margin-left 0.5s;
-    padding: 20px;
+/* Adjusting chapter text images */
+.chapter-text-image img {
+    min-width: 5%; /* Set a specific width */
+    min-height: 5%; /* Set a specific height */
+    max-width: 50%; /* Ensure it doesn't exceed container */
+    max-height: 50%; /* Ensure it doesn't exceed container */
+    object-fit: contain; /* Ensure proper scaling */
+    margin: 1rem; /* Space around the image */
 }
 
-.openbtn {
-    font-size: 24px;
-    cursor: pointer;
+/* Chapter styles */
+.chapter {
+    height: 100vh; /* Full viewport height */
+    padding: 2rem; /* Padding for chapters */
+    background-color: #F2D0B4;
+}
+
+/* .chapter:first-of-its-kind {
+    grid-area: chapter1; 
+}
+
+.chapter:nth-of-its-kind(2) {
+    grid-area: chapter2; 
+}
+
+.chapter:nth-of-its-kind(3) {
+    grid-area: chapter3; 
+}
+
+.chapter:last-of-its-kind {
+    grid-area: chapter4; 
+}
+
+.illustration:first-of-its-kind {
+    grid-area: illustration1; 
+}
+
+.illustration:nth-of-its-kind(2) {
+    grid-area: illustration2; 
+}
+
+.illustration:nth-of-its-kind(3) {
+    grid-area: illustration3; 
+}
+
+.illustration:last-of-its-kind {
+    grid-area: illustration4; 
+}
+ */
+/* Transition styles */
+.transition {
+    height: 100vh; /* Full viewport height */
+    background-color: #1D2F3B; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .transition:first-of-its-kind {
+    grid-area: transition1; 
+}
+
+.transition:nth-of-its-kind(2) {
+    grid-area: transition2; 
+}
+
+.transition:nth-of-its-kind(3) {
+    grid-area: transition3; 
+}
+
+.transition:last-of-its-kind {
+    grid-area: transition4; 
+} */
+
+
+/* Footer style */
+.footer {
+    background-color: #1D2F3B; 
+    color: #F2D0B4;; 
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem; /* Padding for footer content */
 }
