@@ -1,29 +1,21 @@
-body {
+html, body {
+    height: 100vh; /* 100% of the viewport height */
     margin: 0;
     padding: 0;
-    overflow-x: scroll; /* Allows horizontal scrolling */
-    font-family: Arial, sans-serif;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Disable vertical scrolling */
+    width: 100%; /* Ensures the body takes full width */
 }
 
 /* Horizontal Scroll Container */
 .h-scroll {
+    display: flex; /* Using flexbox for horizontal layout */
+    flex-direction: row; /* Laying out children horizontally */
+    min-width: 100%; /* Ensures the container is at least as wide as all its children combined */
+    height: 100vh; /* Matching the viewport height */
     display: grid;
-   /*  grid-template-rows: repeat(6, 1fr); 
-    grid-template-columns: repeat(14, 12fr);
-    grid-template-areas: 
-        "hero transition1 illustration1"       
-        "hero transition1 illustration1"         
-        "hero transition1 illustration1"  
-        "hero transition1 chapter1"     
-        "hero transition1 transition2"  
-        "hero transition1 chapter2"     
-        "hero transition1 transition3"  
-        "hero transition1 chapter3"     
-        "hero transition1 transition4"  
-        "hero transition1 chapter4"     
-        "hero transition1 footer";   */    
-    grid-template-columns: repeat(14, 100vw);  /* Horizontal scroll with 14 columns */
-    scroll-behavior: smooth; /* Smooth scrolling */
+    grid-template-columns: repeat(14, 100vw);  
+    scroll-behavior: smooth; 
 }
 
 /* Navbar style */
@@ -41,6 +33,7 @@ body {
     align-items: flex-start; /* Aligns to the left */
     padding: 1rem; /* Padding for the navbar */
 }
+
 
 /* Hero Section */
 .hero {
