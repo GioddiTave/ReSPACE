@@ -1,62 +1,131 @@
-html, body {
-    height: 100vh; /* 100% of the viewport height */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    overflow-y: hidden; /* Disable vertical scrolling */
-    width: 100%; /* Ensures the body takes full width */
 }
 
-/* Horizontal Scroll Container */
-.h-scroll {
-    display: flex; /* Using flexbox for horizontal layout */
-    flex-direction: row; /* Laying out children horizontally */
-    min-width: 100%; /* Ensures the container is at least as wide as all its children combined */
-    height: 100vh; /* Matching the viewport height */
-    display: grid;
-    grid-template-columns: repeat(14, 100vw);  
+html, body {
+    height: 100vh;     
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;     
+    overflow-y: hidden;     
+    width: 100%;   
+}
+
+.navbar {
+    z-index: 1000;
+    position: fixed;   /* Keeps the navbar fixed on the left */  
+    top: 0;
+    left: 0;
+    height: 100vh;   
+    width: 5rem;     
+    background-color: #1D2F3B;  
+    color: #F2D0B4;     
+    display: flex;
+    flex-direction: column;     
+    justify-content: flex-start;     
+    align-items: flex-start;     
+    padding: 1rem;     
+}
+
+.logo {
+    width: 8em;
+    padding: 1em;
+}
+
+.slider {
+    display: flex;    
+    flex-direction: row;   /* Laying out children horizontally */  
+    min-width: 100%;   /* Ensures the container is at least as wide as all its children combined */  
+    height: 100vh;    
+   /*  display: grid;
+    grid-template-columns: repeat(14, 100vw); */  
     scroll-behavior: smooth; 
     overflow-x: auto;
     overflow-y: hidden;
-    width: calc(300vw * number_of_sections); /* Adjust 'number_of_sections' to match your actual number of horizontal sections */
+    width: calc(300vw * number_of_sections);   /* Adjust 'number_of_sections' to match your actual number of horizontal sections*/  
+} 
+
+.outer {
+    height: 100vh;
+    overflow-x: auto; /* Enable horizontal scrolling */
 }
 
-/* Navbar style */
+
+
+.section {
+    width: 100vw; /* Each section is as wide as the viewport */
+    height: 100vh; /* Each section is as tall as the viewport */
+    flex-shrink: 0; /* Prevent flex items from shrinking */
+}
+
+.inner {
+    position: relative;
+    width: 100%; /* Full width of the section */
+    height: 100%; /* Full height of the section */
+    padding: 7em; /* Example padding, adjust as needed */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+img {
+    max-width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.content {
+    text-align: center; /* Center the text content */
+    color: #1D2F3B; /* Text color */
+}
+
+
+
+
+
+
+
+
+
+  Horizontal Scroll Container  
+/*
+  Navbar style  
 .navbar {
-    position: fixed; /* Keeps the navbar fixed on the left */
+    position: fixed;   Keeps the navbar fixed on the left  
     top: 0;
     left: 0;
-    height: 100vh; /* Full viewport height */
-    width: 5rem; /* Fixed width */
-    /* background-color: #1D2F3B; */
-    color: #F2D0B4; /* Light text */
+    height: 100vh;   Full viewport height  
+    width: 5rem;   Fixed width  
+      background-color: #1D2F3B;  
+    color: #F2D0B4;   Light text  
     display: flex;
-    flex-direction: column; /* Vertical alignment */
-    justify-content: flex-start; /* Aligns at the top */
-    align-items: flex-start; /* Aligns to the left */
-    padding: 1rem; /* Padding for the navbar */
+    flex-direction: column;   Vertical alignment  
+    justify-content: flex-start;   Aligns at the top  
+    align-items: flex-start;   Aligns to the left  
+    padding: 1rem;   Padding for the navbar  
 }
 
 
-/* Hero Section */
+  Hero Section  
 .hero {
-    /* grid-area: hero; */
-    background-color: #1D2F3B; /* Dark background */
-    color: #F2D0B4; /* Light text */
+      grid-area: hero;  
+    background-color: #1D2F3B;   Dark background  
+    color: #F2D0B4;   Light text  
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;   Full viewport height  
 }
 
 .hero h1 {
-    font-size: 4rem; /* Large font for 'SPACE' */
+    font-size: 4rem;   Large font for 'SPACE'  
 }
 
 .hero p {
-    font-size: 1.5rem; /* Smaller font for 'Scroll' */
+    font-size: 1.5rem;   Smaller font for 'Scroll'  
 }
 
 .chapter-image img {
@@ -64,29 +133,29 @@ html, body {
     object-fit: cover;
     
 }
-/* Chapter Text Styling */
+  Chapter Text Styling  
 .chapter-text {
-    padding: 1rem; /* Padding for chapter text */
+    padding: 1rem;   Padding for chapter text  
 }
 
-/* Adjusting chapter text images */
+  Adjusting chapter text images  
 .chapter-text-image img {
-    min-width: 5%; /* Set a specific width */
-    min-height: 5%; /* Set a specific height */
-    max-width: 50%; /* Ensure it doesn't exceed container */
-    max-height: 50%; /* Ensure it doesn't exceed container */
-    object-fit: contain; /* Ensure proper scaling */
-    margin: 1rem; /* Space around the image */
+    min-width: 5%;   Set a specific width  
+    min-height: 5%;   Set a specific height  
+    max-width: 50%;   Ensure it doesn't exceed container  
+    max-height: 50%;   Ensure it doesn't exceed container  
+    object-fit: contain;   Ensure proper scaling  
+    margin: 1rem;   Space around the image  
 }
 
-/* Chapter styles */
+  Chapter styles  
 .chapter {
-    height: 100vh; /* Full viewport height */
-    padding: 2rem; /* Padding for chapters */
+    height: 100vh;   Full viewport height  
+    padding: 2rem;   Padding for chapters  
     background-color: #F2D0B4;
 }
 
-/* .chapter:first-of-its-kind {
+  .chapter:first-of-its-kind {
     grid-area: chapter1; 
 }
 
@@ -117,17 +186,17 @@ html, body {
 .illustration:last-of-its-kind {
     grid-area: illustration4; 
 }
- */
-/* Transition styles */
+  
+  Transition styles  
 .transition {
-    height: 100vh; /* Full viewport height */
+    height: 100vh;   Full viewport height  
     background-color: #1D2F3B; 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* .transition:first-of-its-kind {
+  .transition:first-of-its-kind {
     grid-area: transition1; 
 }
 
@@ -141,10 +210,10 @@ html, body {
 
 .transition:last-of-its-kind {
     grid-area: transition4; 
-} */
+}  
 
 
-/* Footer style */
+  Footer style  
 .footer {
     background-color: #1D2F3B; 
     color: #F2D0B4;; 
@@ -152,5 +221,6 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem; /* Padding for footer content */
+    padding: 1rem;   Padding for footer content  
 }
+ */
