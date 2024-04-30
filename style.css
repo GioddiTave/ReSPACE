@@ -70,6 +70,18 @@ html, body {
     justify-content: center; /* Center content horizontally */
 }
 
+.hero {
+    /* grid-area: hero; */ 
+    background-color: #1D2F3B;    
+    color: #F2D0B4;    
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;    
+}
+
 img {
     max-width: 100%; /* Make images responsive */
     height: auto; /* Maintain aspect ratio */
@@ -90,24 +102,7 @@ img {
 
   Horizontal Scroll Container  
 /*
-  Navbar style  
-.navbar {
-    position: fixed;   Keeps the navbar fixed on the left  
-    top: 0;
-    left: 0;
-    height: 100vh;   Full viewport height  
-    width: 5rem;   Fixed width  
-      background-color: #1D2F3B;  
-    color: #F2D0B4;   Light text  
-    display: flex;
-    flex-direction: column;   Vertical alignment  
-    justify-content: flex-start;   Aligns at the top  
-    align-items: flex-start;   Aligns to the left  
-    padding: 1rem;   Padding for the navbar  
-}
 
-
-  Hero Section  
 .hero {
       grid-area: hero;  
     background-color: #1D2F3B;   Dark background  
