@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Planeto', sans-serif;
 }
 
-.accent, .accent-text {
+.accent, .accent-text, .accent-text p {
     font-family: 'Geostar Fill', cursive;
 }
 
@@ -50,7 +50,7 @@ html, body {
     left: 0;
     height: 100vh;   
     width: 5rem;     
-    background-color: #1D2F3B;  
+    /* background-color: #1D2F3B;   */
     color: #F2D0B4;     
     display: flex;
     flex-direction: column;     
@@ -59,9 +59,11 @@ html, body {
     padding: 1rem;     
 }
 
+
+
 .logo {
-    width: 8em;
-    padding: 1em;
+    width: 4em;
+    /* padding: 1em; */
 }
 
 .slider {
@@ -80,6 +82,7 @@ html, body {
 .outer {
     height: 100vh;
     overflow-x: auto; /* Enable horizontal scrolling */
+    background-color: #F2D0B4;
 }
 
 
@@ -114,8 +117,8 @@ html, body {
 }
 
 .hero-content {
-    justify-content: center;
-    align-items: end;
+    align-content: center;
+    align-items: center;
 }
 .hero-content h1 {
     font-size: 4rem;     
@@ -130,16 +133,82 @@ html, body {
     font-size: 2rem; 
 }
 
-img {
-    max-width: 100%; /* Make images responsive */
-    height: auto; /* Maintain aspect ratio */
+.transition {
+    background-color: #1D2F3B;
+    width: 100vw;
+    height: 100vh;
+    display: flex; 
+}
+.illustration {
+    height: 100vh;
+    display: flex; 
 }
 
 .content {
     text-align: center; /* Center the text content */
+    position: flex;
+    background-color: #F2D0B4;
     color: #1D2F3B; /* Text color */
+    padding: 5em;
 }
 
+.content h2{
+    align-self: start;
+    text-align: left;
+}
+
+.content p {
+    text-align: left;
+    padding-top: 3em;
+    max-width: 50%;
+}
+
+.accent-text {
+    display: grid;
+    width: 40rem;
+   /*  grid-template-columns: 5em 5em; */
+    padding-top: 3em;
+    align-items: center;
+    text-align: left;
+    grid-template-areas: 
+    'bild text';
+    justify-items: start;
+}
+.accent-text img {
+    grid-area: bild;
+    height: 5em;
+}
+
+.accent-text p {
+    grid-area: text;
+    /* padding-left: 1em; */ 
+}
+
+
+.rules {
+    background-color: #F2D0B4;
+    padding: 5em;
+    display: grid;
+    grid-template-rows: 2fr 2fr;
+    grid-template-columns: auto;
+    grid-template-areas: 
+    'bild text'
+    'bild text'
+    ;
+    padding: 1rem;
+
+}
+.rules img {
+    grid-area: bild;
+    height: 4em;
+    width: 4em;
+}
+
+.rules p {
+    grid-area: text;
+    width: 15em;
+    text-align: center;
+}
 
 
 
@@ -153,13 +222,6 @@ img {
 
 
 
-.hero h1 {
-    font-size: 4rem;   Large font for 'SPACE'  
-}
-
-.hero p {
-    font-size: 1.5rem;   Smaller font for 'Scroll'  
-}
 
 .chapter-image img {
     height: 100vh; 
