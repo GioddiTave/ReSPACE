@@ -34,6 +34,21 @@ p {
     padding: 0;
 }
 
+/* .content, .illustration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+}
+
+.transition {
+    position: relative;
+    z-index: 2; 
+    transition: opacity 0.5s ease-in-out;
+} */
+
 html, body {
     height: 100vh;     
     margin: 0;
@@ -144,12 +159,20 @@ html, body {
     display: flex; 
 }
 
+.welcome {
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    grid-template-areas: 
+    'welcome rules';
+    padding-top: 5em;
+}
 .content {
+    grid-area: welcome;
     text-align: center; /* Center the text content */
     position: flex;
     background-color: #F2D0B4;
     color: #1D2F3B; /* Text color */
-    padding: 5em;
+    
 }
 
 .content h2{
@@ -185,29 +208,38 @@ html, body {
 }
 
 
+.rules-header{
+    grid-area: rules;
+    text-align: left; /* Center the text content */
+    position: flex;
+    background-color: #F2D0B4;
+    color: #1D2F3B; /* Text color */
+    height: 100%;
+   
+}
 .rules {
     background-color: #F2D0B4;
-    padding: 5em;
+    padding-top: 3em;  
     display: grid;
-    grid-template-rows: 2fr 2fr;
-    grid-template-columns: auto;
-    grid-template-areas: 
-    'bild text'
-    'bild text'
-    ;
-    padding: 1rem;
-
+    grid-template-columns: 1fr 7fr; 
+    grid-template-rows: auto;
+    grid-row-gap: 1em; 
+    align-items: center;
 }
+
 .rules img {
-    grid-area: bild;
     height: 4em;
     width: 4em;
+    justify-self: start; 
+    align-items: start;
 }
 
 .rules p {
-    grid-area: text;
+    width: auto; 
+    text-align: left;
+    justify-self: start;
     width: 15em;
-    text-align: center;
+    
 }
 
 
