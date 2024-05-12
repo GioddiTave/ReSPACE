@@ -168,9 +168,9 @@ html, body {
     'welcome rules';
     padding-top: 5em;
 }
+
 .content {
     grid-area: welcome;
-    text-align: center; /* Center the text content */
     position: flex;
     background-color: #F2D0B4;
     color: #1D2F3B; /* Text color */
@@ -213,15 +213,12 @@ html, body {
 
 .rules-header{
     grid-area: rules;
-    text-align: left; /* Center the text content */
+    text-align: left; 
     position: flex;
-    background-color: #F2D0B4;
-    color: #1D2F3B; /* Text color */
     height: 100%;
    
 }
 .rules {
-    background-color: #F2D0B4;
     padding-top: 3em;  
     display: grid;
     grid-template-columns: 1fr 7fr; 
@@ -245,8 +242,53 @@ html, body {
     
 }
 
+.nasa {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 4fr 1fr;  /* Anpassung des Verhältnisses */
+    grid-gap: 2em;
+    grid-template-areas: 'nasa news';
+    padding-top: 5em;
+}
 
+.content-nasa {
+    grid-area: nasa;
+    text-align: left;    
+}
 
+.content-nasa p {
+    padding-top: 3em;
+    max-width: 50%;
+}
+
+.news {
+    grid-area: news;
+    text-align: center;
+    
+}
+
+.news h3 {
+    padding-bottom: 2em;
+}
+
+.news-button {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-row-gap: 1em;          
+}
+
+.button {  
+    background-color: #4DAD6E;
+    padding: 2em;  /* Erhöhe das Padding */
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: #4EA2AC; 
+}
 
 
 
