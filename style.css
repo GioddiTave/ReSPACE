@@ -95,6 +95,8 @@ html, body {
 } 
 
 .outer {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  */
     height: 100vh;
     overflow-x: auto; /* Enable horizontal scrolling */
     background-color: #F2D0B4;
@@ -103,9 +105,9 @@ html, body {
 
 
 .section {
-    width: 100vw; /* Each section is as wide as the viewport */
+    /* width: 100vw; */ 
     height: 100vh; /* Each section is as tall as the viewport */
-    flex-shrink: 0; /* Prevent flex items from shrinking */
+    flex-shrink: 0; 
     overflow-x: hidden;
 }
 
@@ -150,7 +152,6 @@ html, body {
 
 .transition {
     background-color: #1D2F3B;
-    width: 100vw;
     height: 100vh;
     display: flex; 
 }
@@ -161,6 +162,7 @@ html, body {
 
 .welcome {
     display: grid;
+    width: 100vw;
     grid-template-columns: 5fr 5fr;
     grid-template-areas: 
     'welcome rules';
@@ -193,6 +195,7 @@ html, body {
     padding-top: 3em;
     align-items: center;
     text-align: left;
+    grid-template-columns: 1fr 4fr;
     grid-template-areas: 
     'bild text';
     justify-items: start;
@@ -249,7 +252,7 @@ html, body {
 
 
 
-  Horizontal Scroll Container  
+  
 /*
 
 
