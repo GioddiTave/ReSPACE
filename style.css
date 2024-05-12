@@ -34,14 +34,6 @@ p {
     padding: 0;
 }
 
-/* .content, .illustration {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1; 
-}
 
 .transition {
     position: relative;
@@ -86,8 +78,6 @@ html, body {
     flex-direction: row;   /* Laying out children horizontally */  
     min-width: 100%;   /* Ensures the container is at least as wide as all its children combined */  
     height: 100vh;    
-   /*  display: grid;
-    grid-template-columns: repeat(14, 100vw); */  
     scroll-behavior: smooth; 
     overflow-x: scroll;
     overflow-y: hidden;
@@ -244,11 +234,11 @@ html, body {
 
 .nasa {
     display: grid;
-    width: 100vw;
-    grid-template-columns: 4fr 1fr;  /* Anpassung des Verhältnisses */
-    grid-gap: 2em;
+    /* height: 100vh; */
+    width: 100%;
+    grid-template-columns: 5fr 2fr;  /* Anpassung des Verhältnisses */
     grid-template-areas: 'nasa news';
-    padding-top: 5em;
+    padding-top: 5em;   
 }
 
 .content-nasa {
@@ -258,12 +248,21 @@ html, body {
 
 .content-nasa p {
     padding-top: 3em;
-    max-width: 50%;
+    max-width: 30em;
 }
 
 .news {
     grid-area: news;
+    width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 2em;
+    
+    
+    
     
 }
 
@@ -274,12 +273,14 @@ html, body {
 .news-button {
     display: grid;
     grid-template-rows: auto auto auto;
-    grid-row-gap: 1em;          
+    grid-row-gap: 1em;    
+         
 }
 
 .button {  
     background-color: #4DAD6E;
-    padding: 2em;  /* Erhöhe das Padding */
+    padding: 1em 3em;  
+    width: 15em;
     display: inline-block;
     cursor: pointer;
     border: none;
