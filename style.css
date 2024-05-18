@@ -260,9 +260,7 @@ html, body {
     justify-content: start;
     align-items: center;
     padding: 2em;
-    
-    
-    
+
     
 }
 
@@ -291,109 +289,31 @@ html, body {
     background-color: #4EA2AC; 
 }
 
-
-
-
-
-  
-/*
-
-
-
-
-.chapter-image img {
-    height: 100vh; 
-    object-fit: cover;
-    
-}
-  Chapter Text Styling  
-.chapter-text {
-    padding: 1rem;   Padding for chapter text  
+.Sci-Fi {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 5fr 5fr;
+    grid-template-areas: 
+    'scifi playlist';
+    padding-top: 5em;
 }
 
-  Adjusting chapter text images  
-.chapter-text-image img {
-    min-width: 5%;   Set a specific width  
-    min-height: 5%;   Set a specific height  
-    max-width: 50%;   Ensure it doesn't exceed container  
-    max-height: 50%;   Ensure it doesn't exceed container  
-    object-fit: contain;   Ensure proper scaling  
-    margin: 1rem;   Space around the image  
+.scifi-content {
+    grid-area: scifi;
+    text-align: left;  
 }
 
-  Chapter styles  
-.chapter {
-    height: 100vh;   Full viewport height  
-    padding: 2rem;   Padding for chapters  
-    background-color: #F2D0B4;
+.scifi-content p {
+    padding-top: 3em;
+    max-width: 30em;
 }
 
-  .chapter:first-of-its-kind {
-    grid-area: chapter1; 
+
+.playlist-content {
+    grid-area: playlist;
 }
 
-.chapter:nth-of-its-kind(2) {
-    grid-area: chapter2; 
+.playlist-content img {
+    height: 10em;
+    width: 10em;
 }
-
-.chapter:nth-of-its-kind(3) {
-    grid-area: chapter3; 
-}
-
-.chapter:last-of-its-kind {
-    grid-area: chapter4; 
-}
-
-.illustration:first-of-its-kind {
-    grid-area: illustration1; 
-}
-
-.illustration:nth-of-its-kind(2) {
-    grid-area: illustration2; 
-}
-
-.illustration:nth-of-its-kind(3) {
-    grid-area: illustration3; 
-}
-
-.illustration:last-of-its-kind {
-    grid-area: illustration4; 
-}
-  
-  Transition styles  
-.transition {
-    height: 100vh;   Full viewport height  
-    background-color: #1D2F3B; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-  .transition:first-of-its-kind {
-    grid-area: transition1; 
-}
-
-.transition:nth-of-its-kind(2) {
-    grid-area: transition2; 
-}
-
-.transition:nth-of-its-kind(3) {
-    grid-area: transition3; 
-}
-
-.transition:last-of-its-kind {
-    grid-area: transition4; 
-}  
-
-
-  Footer style  
-.footer {
-    background-color: #1D2F3B; 
-    color: #F2D0B4;; 
-    height: 100vh; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;   Padding for footer content  
-}
- */
