@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Planeto', sans-serif;
 }
 
-.accent, .accent-text, .accent-text p {
+.accent, .accent-text, .accent-text-scifi ,.accent-text p {
     font-family: 'Geostar Fill', cursive;
 }
 
@@ -99,6 +99,7 @@ html, body {
     height: 100vh; /* Each section is as tall as the viewport */
     flex-shrink: 0; 
     overflow-x: hidden;
+    
 }
 
 .inner {
@@ -291,11 +292,13 @@ html, body {
 
 .Sci-Fi {
     display: grid;
-    width: 100vw;
-    grid-template-columns: 5fr 5fr;
+    width: 100%;
+    grid-template-columns: 7fr 4fr;
     grid-template-areas: 
     'scifi playlist';
     padding-top: 5em;
+    padding-left: 2em;
+    
 }
 
 .scifi-content {
@@ -308,12 +311,172 @@ html, body {
     max-width: 30em;
 }
 
+.accent-text-scifi {
+    padding-top: 3em;
+}
+
+
 
 .playlist-content {
     grid-area: playlist;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-right: 10em;
+    padding-top: 5em;
 }
 
+.playlist-content h3 {
+    padding-bottom: 1em;
+}
+
+.playlist-content p {
+    padding-top: 1em;
+}
 .playlist-content img {
     height: 10em;
     width: 10em;
+    
+}
+
+.stories {
+    display: grid;
+    width: 150vw;
+    grid-template-columns: 10fr 10fr;  
+    grid-template-areas: 
+    'title title'
+    'spock mark';
+    padding-top: 5em;  
+    padding-left: 8em; 
+    column-gap: 4em;
+}
+
+#question {
+    font-family: 'Geostar Fill', cursive;
+    padding-bottom: 0.5em;
+    
+}
+
+#answer {
+    padding-bottom: 2em;
+}
+
+.stories h3 {
+    grid-area: title;
+    padding-bottom: 3em;
+}
+
+.spock-content {
+    grid-area: spock;
+    display: grid;
+    grid-template-columns: 1fr 8fr 8fr;  
+    grid-template-areas: 'b1 p1 p1a';
+    column-gap: 1em;
+
+}
+
+
+.b1 {
+    grid-area: b1;
+    padding-right: 3em;
+}
+
+.p1 {
+    grid-area: p1;
+    max-width: 20em;
+    min-width: 15em;
+}
+
+.p1a {
+    grid-area: p1a;
+    max-width: 20em;
+    min-width: 15em;
+   
+}
+
+
+
+.spock-content img {
+    width: 15em;
+    height:15em;
+    
+}
+
+.spock-content h4 {
+    padding-top: 1em;
+}
+
+.mark-content {
+    grid-area: mark;
+    display: grid;
+    grid-template-columns: 1fr 8fr 8fr;  
+    grid-template-areas: 'b2 p2 p2a';
+    /* column-gap: 4em; */
+}
+
+.mark-content img {
+    width: 15em;
+    height:15em;
+}
+
+.mark-content h4 {
+    padding-top: 1em;
+}
+
+.b2 {
+    grid-area: b2;
+    padding-right: 3em;
+}
+
+.p2 {
+    grid-area: p2;
+    max-width: 20em;
+    min-width: 15em;
+}
+
+.p2a {
+    grid-area: p2a;
+    max-width: 20em;
+    min-width: 15em;
+}
+
+
+
+.content-by {
+    display: grid;
+    grid-template-columns: auto;
+    padding-top: 5em;
+    width: 60vw;
+    
+}
+
+.content-by h2 {
+    padding-bottom: 2em;
+}
+
+.content-by p {
+    max-width: 25em;
+}
+
+.footer {
+    /* display: grid; 
+    grid-template-columns: auto; */
+    
+    background-color: #1D2F3B;    
+    color: #F2D0B4;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding-left: 5em;
+    height: 100vh; 
+    width: 20vw; 
+}
+
+.footer p {
+    max-width: 10em;
+    text-align: left;
 }
