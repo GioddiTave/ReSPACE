@@ -57,21 +57,31 @@ html, body {
     left: 0;
     height: 100vh;   
     width: 5rem;     
-    /* background-color: #1D2F3B;   */
     color: #F2D0B4;     
     display: flex;
     flex-direction: column;     
     justify-content: flex-start;     
-    align-items: flex-start;     
-    padding: 1rem;     
+    align-items: center; /* Ändere auf center, um Elemente horizontal zu zentrieren */  
+    padding: 1em 0; /* Reduziere das Padding, um den Abstand zu verringern */
 }
 
-
-
-.logo {
+.logo img {
     width: 4em;
-    /* padding: 1em; */
+    height: 4em; /* Setze die Höhe und Breite des Logos auf 4em */
+    margin-bottom: -3em; /* Verringere den Abstand zwischen Logo und Hamburger-Button */
 }
+
+.hamburger {
+    width: 4em; /* Passe die Breite des Hamburger-Buttons an */
+    height: 4em; /* Passe die Höhe des Hamburger-Buttons an */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em; /* Passe die Größe des Hamburger-Symbols an */
+    cursor: pointer;
+}
+
+
 
 .slider {
     display: flex;    
@@ -479,4 +489,13 @@ html, body {
 .footer p {
     max-width: 10em;
     text-align: left;
+}
+
+.icon {
+    width: 2em;
+    height: 2em;
+    display: flex;
+    /* justify-content: space-between; */
+    column-gap: 1em;
+    
 }
