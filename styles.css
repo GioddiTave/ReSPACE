@@ -18,11 +18,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Planeto', sans-serif;
 }
 
-.accent, .accent-text, .accent-text-scifi ,.accent-text p {
-    font-family: 'Geostar Fill', cursive;
-}
-
-
 p {
     font-family: 'Lato', sans-serif;
 }
@@ -34,35 +29,65 @@ p {
     padding: 0;
 }
 
+.accent-text-scifi ,.accent-text p, .accent-text-by,.accent-text-nasa {
+    font-family: 'Geostar Fill', cursive;
+    font-size: 1rem;
+}
+
+.accent-text-scifi, .accent-text-by {
+    padding-top: 3em;
+}
+
+.content, .content-nasa, .scifi-content, .content-by {
+    position: flex;
+    background-color: #F2D0B4;
+    color: #1D2F3B;
+    padding-top: 5em;
+}
+
+.content h2, .content-nasa h2, .scifi-content h2, .content-by h2 {
+    font-size: 2rem;
+    align-self: start;
+    text-align: left;
+}
+
+.content p, .content-nasa p, .scifi-content p, .content-by p {
+    font-size: 1rem;
+    text-align: left;
+    padding-top: 3em;
+    max-width: 30em;
+}
+
+
 
 .transition {
     position: relative;
     z-index: 2; 
     transition: opacity 0.5s ease-in-out;
-} */
+} 
 
 html, body {
-    height: 100vh;     
+    height: 100vh;
     margin: 0;
     padding: 0;
-    overflow-x: auto;     
-    overflow-y: hidden;     
-    width: 100%;   
+    overflow: hidden;
+    width: 100%;
+    background-color: #F2D0B4;
 }
 
 .navbar {
     z-index: 1000;
-    position: fixed;   /* Keeps the navbar fixed on the left */  
+    position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;   
-    width: 5rem;     
-    color: #F2D0B4;     
+    height: 100vh;
+    width: 5rem;
+    color: #F2D0B4;
     display: flex;
-    flex-direction: column;     
-    justify-content: flex-start;     
-    align-items: center; /* Ändere auf center, um Elemente horizontal zu zentrieren */  
-    padding: 1em 0; /* Reduziere das Padding, um den Abstand zu verringern */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1em 0;
 }
 
 .logo img {
@@ -83,33 +108,34 @@ html, body {
 
 
 
-.slider {
+/* .slider {
     display: flex;    
-    flex-direction: row;   /* Laying out children horizontally */  
-    min-width: 100%;   /* Ensures the container is at least as wide as all its children combined */  
+    flex-direction: row;  
+    min-width: 100%;    
     height: 100vh;    
     scroll-behavior: smooth; 
     overflow-x: scroll;
     overflow-y: hidden;
-    width: calc(300vw * number_of_sections);   /* Adjust 'number_of_sections' to match your actual number of horizontal sections*/  
-} 
+    width: calc(300vw * number_of_sections);    
+}  */
 
-.outer {
-    display: grid;
-    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  */
+.container {
+    display: flex;
+    width: 100vw;
     height: 100vh;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    background-color: #F2D0B4;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
 }
 
-
-
 .section {
-    /* width: 100vw; */ 
-    height: 100vh; /* Each section is as tall as the viewport */
-    flex-shrink: 0; 
-    overflow-x: hidden;
-    
+    /* width: 100vw; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    flex-shrink: 0;
 }
 
 .inner {
@@ -167,32 +193,17 @@ html, body {
     grid-template-columns: 5fr 5fr;
     grid-template-areas: 
     'welcome rules';
-    padding-top: 5em;
-}
-
-.content {
-    grid-area: welcome;
-    position: flex;
-    background-color: #F2D0B4;
-    color: #1D2F3B; /* Text color */
     
 }
 
-.content h2{
-    align-self: start;
-    text-align: left;
+.content {
+    grid-area: welcome;    
 }
 
-.content p {
-    text-align: left;
-    padding-top: 3em;
-    max-width: 50%;
-}
 
 .accent-text {
     display: grid;
     width: 40rem;
-   /*  grid-template-columns: 5em 5em; */
     padding-top: 3em;
     align-items: center;
     text-align: left;
@@ -208,7 +219,6 @@ html, body {
 
 .accent-text p {
     grid-area: text;
-    /* padding-left: 1em; */ 
 }
 
 
@@ -245,22 +255,16 @@ html, body {
 
 .nasa {
     display: grid;
-    /* height: 100vh; */
     width: 100%;
     grid-template-columns: 5fr 2fr;  /* Anpassung des Verhältnisses */
-    grid-template-areas: 'nasa news';
-    padding-top: 5em;   
+    grid-template-areas: 'nasa news'; 
 }
 
 .content-nasa {
-    grid-area: nasa;
-    text-align: left;    
+    grid-area: nasa; 
 }
 
-.content-nasa p {
-    padding-top: 3em;
-    max-width: 30em;
-}
+
 
 .news {
     grid-area: news;
@@ -306,25 +310,13 @@ html, body {
     grid-template-columns: 7fr 4fr;
     grid-template-areas: 
     'scifi playlist';
-    padding-top: 5em;
     padding-left: 2em;
     
 }
 
 .scifi-content {
-    grid-area: scifi;
-    text-align: left;  
+    grid-area: scifi; 
 }
-
-.scifi-content p {
-    padding-top: 3em;
-    max-width: 30em;
-}
-
-.accent-text-scifi {
-    padding-top: 3em;
-}
-
 
 
 .playlist-content {
@@ -453,23 +445,19 @@ html, body {
     min-width: 15em;
 }
 
-
-
-.content-by {
+.by {
     display: grid;
     grid-template-columns: auto;
-    padding-top: 5em;
+}
+
+.content-by {
     width: 60vw;
     
 }
 
-.content-by h2 {
-    padding-bottom: 2em;
-}
 
-.content-by p {
-    max-width: 25em;
-}
+
+
 
 .footer {
     /* display: grid; 
@@ -498,4 +486,8 @@ html, body {
     /* justify-content: space-between; */
     column-gap: 1em;
     
+}
+
+@media (max-width: 600px) {
+
 }
