@@ -489,5 +489,34 @@ html, body {
 }
 
 @media (max-width: 600px) {
-
+    
+        .accent-text-scifi ,.accent-text p, .accent-text-by,.accent-text-nasa {
+            font-family: 'Geostar Fill', cursive;
+            font-size: 1rem;
+        }
+        
+        .accent-text-scifi, .accent-text-by {
+            padding-top: 3em;
+        }
+        
+        .content, .content-nasa, .scifi-content, .content-by {
+            position: flex;
+            background-color: #F2D0B4;
+            color: #1D2F3B;
+            padding-top: 5em;
+        }
+        
+        .content h2, .content-nasa h2, .scifi-content h2, .content-by h2 {
+            font-size: 2rem;
+            align-self: start;
+            text-align: left;
+        }
+        
+        .content p, .content-nasa p, .scifi-content p, .content-by p {
+            font-size: 1rem;
+            text-align: left;
+            padding-top: 3em;
+            max-width: 30em;
+        }
+    
 }
