@@ -69,6 +69,33 @@ p {
     font-size: 0.8rem;
     padding-top: 1em;
 }
+
+.spock-content, .mark-content {
+    column-gap: 1em; 
+}
+
+.stories {
+    column-gap: 2em;  
+}
+
+.spock-content, .mark-content {
+    grid-template-columns: 1fr 2fr 2fr;  
+}
+
+.question {
+    font-family: 'Geostar Fill', cursive;
+    padding-bottom: 0.5em;
+}
+
+.answer {
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 2em;
+}
+
+.spock-content h4, .mark-content h4  {
+    padding-top: 1em;
+}
+
 .transition {
     position: relative;
     z-index: 2; 
@@ -370,34 +397,24 @@ html, body {
 .stories {
     display: grid;
    /*  width: 150vw; */
-   grid-template-columns: 3fr 3fr;  
+   grid-template-columns: auto auto;  
     grid-template-areas: 
     'title title'
     'spock mark';
     /* padding-top: 5em;   */
-    padding-left: 8em; 
+    /* padding-left: 8em;  */
     /* column-gap: 4em; */
 }
 
-#question {
-    font-family: 'Geostar Fill', cursive;
-    padding-bottom: 0.5em;
-    
-}
-
-#answer {
-    padding-bottom: 2em;
-}
 
 .stories h3 {
     grid-area: title;
-    padding-bottom: 3em;
+    /* padding-bottom: 3em; */
 }
 
 .spock-content {
     grid-area: spock;
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr;  
     grid-template-areas: 'b1 p1 p1a';
     /* column-gap: 1em; */
 
@@ -406,7 +423,7 @@ html, body {
 
 .b1 {
     grid-area: b1;
-    padding-right: 3em;
+    /* padding-right: 3em; */
 }
 
 .p1 {
@@ -430,14 +447,10 @@ html, body {
     
 }
 
-.spock-content h4 {
-    padding-top: 1em;
-}
 
 .mark-content {
     grid-area: mark;
     display: grid;
-    grid-template-columns: 1fr 8fr 8fr;  
     grid-template-areas: 'b2 p2 p2a';
     /* column-gap: 4em; */
 }
@@ -447,13 +460,11 @@ html, body {
     height:15em;
 }
 
-.mark-content h4 {
-    padding-top: 1em;
-}
+
 
 .b2 {
     grid-area: b2;
-    padding-right: 3em;
+    /* padding-right: 3em; */
 }
 
 .p2 {
@@ -478,6 +489,10 @@ html, body {
     
 }
 
+.accent-text-by {
+    max-width: 30em;
+    min-width: 15em;
+}
 
 
 
