@@ -29,7 +29,7 @@ p {
     padding: 0;
 }
 
-.accent-text-scifi ,.accent-text p, .accent-text-by,.accent-text-nasa {
+.accent-text-scifi ,.accent-text p, .accent-text-by,.accent-text-nasa, .accent-text-music {
     font-family: 'Geostar Fill', cursive;
     font-size: 1rem;
 }
@@ -42,7 +42,7 @@ p {
     position: flex;
     background-color: #F2D0B4;
     color: #1D2F3B;
-    padding-top: 5em;
+    padding-top: 12em;
 }
 
 .content h2, .content-nasa h2, .scifi-content h2, .content-by h2 {
@@ -55,11 +55,20 @@ p {
     font-size: 1rem;
     text-align: left;
     padding-top: 3em;
-    max-width: 30em;
+    width: 30em;
 }
 
 
+.rules-header h3, .news h3, .playlist-content h3, .stories h3{
+    font-size: 1.3rem;
+    padding-top: 9em;
+    padding-bottom: 2em;
+}
 
+.playlist-content p{
+    font-size: 0.8rem;
+    padding-top: 1em;
+}
 .transition {
     position: relative;
     z-index: 2; 
@@ -68,8 +77,6 @@ p {
 
 html, body {
     height: 100vh;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
     width: 100%;
     background-color: #F2D0B4;
@@ -107,18 +114,6 @@ html, body {
 }
 
 
-
-/* .slider {
-    display: flex;    
-    flex-direction: row;  
-    min-width: 100%;    
-    height: 100vh;    
-    scroll-behavior: smooth; 
-    overflow-x: scroll;
-    overflow-y: hidden;
-    width: calc(300vw * number_of_sections);    
-}  */
-
 .container {
     display: flex;
     width: 100vw;
@@ -130,21 +125,21 @@ html, body {
 
 .section {
     /* width: 100vw; */
-    height: 100vh;
+   /*  height: 100vh; */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: start;
+    align-items: start; */
     scroll-snap-align: start;
     flex-shrink: 0;
 }
 
 .inner {
     position: relative;
-    width: 100%; 
-    height: 100%; 
+    /* width: 100%;
+    height: 100vh;  */
     display: flex;
-    align-items: center; 
-    justify-content: center; 
+    align-items: start; 
+    justify-content: start; 
 }
 
 .hero {
@@ -189,11 +184,9 @@ html, body {
 
 .welcome {
     display: grid;
-    width: 100vw;
     grid-template-columns: 5fr 5fr;
     grid-template-areas: 
-    'welcome rules';
-    
+    'welcome rules'; 
 }
 
 .content {
@@ -205,12 +198,10 @@ html, body {
     display: grid;
     width: 40rem;
     padding-top: 3em;
-    align-items: center;
-    text-align: left;
     grid-template-columns: 1fr 4fr;
     grid-template-areas: 
     'bild text';
-    justify-items: start;
+    align-items: center;
 }
 .accent-text img {
     grid-area: bild;
@@ -219,43 +210,53 @@ html, body {
 
 .accent-text p {
     grid-area: text;
+    background-color: #4DAD6E;
+    padding: 1em 3em;  
+    width: 20em;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+.accent-text p:hover {
+    background-color: #4EA2AC; 
 }
 
 
 .rules-header{
     grid-area: rules;
-    text-align: left; 
-    position: flex;
-    height: 100%;
+    /* position: flex; */
+
    
 }
 .rules {
-    padding-top: 3em;  
     display: grid;
     grid-template-columns: 1fr 7fr; 
     grid-template-rows: auto;
     grid-row-gap: 1em; 
+    grid-column-gap: 1.5em;
     align-items: center;
 }
 
 .rules img {
     height: 4em;
     width: 4em;
-    justify-self: start; 
-    align-items: start;
+   /*  justify-self: start; 
+    align-items: start; */
 }
 
 .rules p {
-    width: auto; 
+    /* width: auto; 
     text-align: left;
-    justify-self: start;
-    width: 15em;
+    justify-self: start; */
+    width: 12em;
     
 }
 
 .nasa {
     display: grid;
-    width: 100%;
+    /* width: 100%; */
     grid-template-columns: 5fr 2fr;  /* Anpassung des Verhältnisses */
     grid-template-areas: 'nasa news'; 
 }
@@ -268,25 +269,22 @@ html, body {
 
 .news {
     grid-area: news;
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
+    /* display: flex;
+    flex-direction: column; */
+    /* justify-content: start;
+    align-items: center; */
     padding: 2em;
 
     
 }
 
-.news h3 {
-    padding-bottom: 2em;
-}
 
 .news-button {
     display: grid;
     grid-template-rows: auto auto auto;
-    grid-row-gap: 1em;    
+    grid-row-gap: 0.5em;    
          
 }
 
@@ -306,11 +304,11 @@ html, body {
 
 .Sci-Fi {
     display: grid;
-    width: 100%;
+    /* width: 100%; */
     grid-template-columns: 7fr 4fr;
     grid-template-areas: 
     'scifi playlist';
-    padding-left: 2em;
+    /* padding-left: 2em; */
     
 }
 
@@ -321,39 +319,64 @@ html, body {
 
 .playlist-content {
     grid-area: playlist;
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
     padding-right: 10em;
-    padding-top: 5em;
+    /* padding-top: 5em; */
 }
 
-.playlist-content h3 {
+.accent-text-music {
     padding-bottom: 1em;
 }
 
-.playlist-content p {
-    padding-top: 1em;
-}
 .playlist-content img {
     height: 10em;
     width: 10em;
     
 }
 
+.arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    cursor: pointer;
+}
+
+.left {
+    border-width: 1rem 1rem 1rem 0; /* Größe des Pfeils */
+    border-color: transparent #000000 transparent transparent; /* Pfeilfarbe */
+    margin-right: 20px; /* Abstand zwischen Pfeil und Cover */
+}
+
+.right {
+    border-width: 1rem 0 1rem 1rem;
+    border-color: transparent transparent transparent #000000;
+    margin-left: 20px;
+}
+
+
+.cover-container {
+    text-align: center;
+    margin: 0 20px; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .stories {
     display: grid;
-    width: 150vw;
-    grid-template-columns: 10fr 10fr;  
+   /*  width: 150vw; */
+   grid-template-columns: 3fr 3fr;  
     grid-template-areas: 
     'title title'
     'spock mark';
-    padding-top: 5em;  
+    /* padding-top: 5em;   */
     padding-left: 8em; 
-    column-gap: 4em;
+    /* column-gap: 4em; */
 }
 
 #question {
@@ -374,9 +397,9 @@ html, body {
 .spock-content {
     grid-area: spock;
     display: grid;
-    grid-template-columns: 1fr 8fr 8fr;  
+    grid-template-columns: 1fr 2fr 2fr;  
     grid-template-areas: 'b1 p1 p1a';
-    column-gap: 1em;
+    /* column-gap: 1em; */
 
 }
 
@@ -489,7 +512,17 @@ html, body {
 }
 
 @media (max-width: 600px) {
+
+    .inner {
+        position: relative;
+        /* width: 100%;
+        height: 100vh;  */
+        display: flex;
+        align-items: start; 
+        justify-content: start; 
+    }
     
+
         .accent-text-scifi ,.accent-text p, .accent-text-by,.accent-text-nasa {
             font-family: 'Geostar Fill', cursive;
             font-size: 1rem;
