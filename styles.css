@@ -126,17 +126,17 @@ html, body {
 
 .logo img {
     width: 4em;
-    height: 4em; /* Setze die Höhe und Breite des Logos auf 4em */
-    margin-bottom: -3em; /* Verringere den Abstand zwischen Logo und Hamburger-Button */
+    height: 4em; 
+    margin-bottom: -3em; 
 }
 
 .hamburger {
-    width: 4em; /* Passe die Breite des Hamburger-Buttons an */
-    height: 4em; /* Passe die Höhe des Hamburger-Buttons an */
+    width: 4em; 
+    height: 4em; 
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3em; /* Passe die Größe des Hamburger-Symbols an */
+    font-size: 3em; 
     cursor: pointer;
 }
 
@@ -151,26 +151,19 @@ html, body {
 }
 
 .section {
-    /* width: 100vw; */
-   /*  height: 100vh; */
     display: flex;
-    /* justify-content: start;
-    align-items: start; */
     scroll-snap-align: start;
     flex-shrink: 0;
 }
 
 .inner {
     position: relative;
-    /* width: 100%;
-    height: 100vh;  */
     display: flex;
     align-items: start; 
     justify-content: start; 
 }
 
 .hero {
-    /* grid-area: hero; */ 
     background-color: #1D2F3B;    
     color: #F2D0B4;    
     text-align: center;
@@ -252,10 +245,7 @@ html, body {
 
 
 .rules-header{
-    grid-area: rules;
-    /* position: flex; */
-
-   
+    grid-area: rules;   
 }
 .rules {
     display: grid;
@@ -269,22 +259,15 @@ html, body {
 .rules img {
     height: 4em;
     width: 4em;
-   /*  justify-self: start; 
-    align-items: start; */
 }
 
 .rules p {
-    /* width: auto; 
-    text-align: left;
-    justify-self: start; */
     width: 12em;
-    
 }
 
 .nasa {
     display: grid;
-    /* width: 100%; */
-    grid-template-columns: 5fr 2fr;  /* Anpassung des Verhältnisses */
+    grid-template-columns: 5fr 2fr; 
     grid-template-areas: 'nasa news'; 
 }
 
@@ -296,12 +279,7 @@ html, body {
 
 .news {
     grid-area: news;
-    /* width: 100%; */
     text-align: center;
-    /* display: flex;
-    flex-direction: column; */
-    /* justify-content: start;
-    align-items: center; */
     padding: 2em;
 
     
@@ -331,12 +309,9 @@ html, body {
 
 .Sci-Fi {
     display: grid;
-    /* width: 100%; */
     grid-template-columns: 7fr 4fr;
     grid-template-areas: 
-    'scifi playlist';
-    /* padding-left: 2em; */
-    
+    'scifi playlist';    
 }
 
 .scifi-content {
@@ -346,14 +321,12 @@ html, body {
 
 .playlist-content {
     grid-area: playlist;
-    /* width: 100%; */
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
     padding-right: 10em;
-    /* padding-top: 5em; */
 }
 
 .accent-text-music {
@@ -374,9 +347,9 @@ html, body {
 }
 
 .left {
-    border-width: 1rem 1rem 1rem 0; /* Größe des Pfeils */
-    border-color: transparent #000000 transparent transparent; /* Pfeilfarbe */
-    margin-right: 20px; /* Abstand zwischen Pfeil und Cover */
+    border-width: 1rem 1rem 1rem 0;
+    border-color: transparent #000000 transparent transparent; 
+    margin-right: 20px; 
 }
 
 .right {
@@ -396,34 +369,26 @@ html, body {
 
 .stories {
     display: grid;
-   /*  width: 150vw; */
    grid-template-columns: auto auto;  
     grid-template-areas: 
     'title title'
     'spock mark';
-    /* padding-top: 5em;   */
-    /* padding-left: 8em;  */
-    /* column-gap: 4em; */
 }
 
 
 .stories h3 {
     grid-area: title;
-    /* padding-bottom: 3em; */
 }
 
 .spock-content {
     grid-area: spock;
     display: grid;
     grid-template-areas: 'b1 p1 p1a';
-    /* column-gap: 1em; */
-
 }
 
 
 .b1 {
     grid-area: b1;
-    /* padding-right: 3em; */
 }
 
 .p1 {
@@ -452,7 +417,6 @@ html, body {
     grid-area: mark;
     display: grid;
     grid-template-areas: 'b2 p2 p2a';
-    /* column-gap: 4em; */
 }
 
 .mark-content img {
@@ -464,7 +428,6 @@ html, body {
 
 .b2 {
     grid-area: b2;
-    /* padding-right: 3em; */
 }
 
 .p2 {
@@ -497,10 +460,7 @@ html, body {
 
 
 
-.footer {
-    /* display: grid; 
-    grid-template-columns: auto; */
-    
+.footer {    
     background-color: #1D2F3B;    
     color: #F2D0B4;    
     display: flex;
@@ -521,17 +481,13 @@ html, body {
     width: 2em;
     height: 2em;
     display: flex;
-    /* justify-content: space-between; */
-    column-gap: 1em;
-    
+    column-gap: 1em; 
 }
 
 @media (max-width: 600px) {
 
     .inner {
         position: relative;
-        /* width: 100%;
-        height: 100vh;  */
         display: flex;
         align-items: start; 
         justify-content: start; 
