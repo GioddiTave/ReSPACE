@@ -23,9 +23,9 @@ let touchScrollVelocity = 0;
 
 function smoothTouchScroll() {
     const container = document.querySelector('.container');
-    if (Math.abs(touchScrollVelocity) > 0.5) { // Schwellenwert für das Stoppen des Scrollens
+    if (Math.abs(touchScrollVelocity) > 0.1) { // Schwellenwert für das Stoppen des Scrollens
         container.scrollLeft += touchScrollVelocity;
-        touchScrollVelocity *= 0.95; // Dämpfungskoeffizient, um das Scrollen allmählich zu verlangsamen
+        touchScrollVelocity *= 0.9; // Dämpfungskoeffizient, um das Scrollen allmählich zu verlangsamen
         requestAnimationFrame(smoothTouchScroll);
     } else {
         touchScrollVelocity = 0; // Stoppt das Scrollen
@@ -44,7 +44,7 @@ document.addEventListener('touchstart', (e) => {
 document.addEventListener('touchmove', (e) => {
     e.preventDefault();
     let currentTouch = e.touches[0].clientX;
-    touchScrollVelocity += (lastTouchPosition - currentTouch) * 0.5; // Anpassen für Empfindlichkeit
+    touchScrollVelocity += (lastTouchPosition - currentTouch) * 0.2; // Anpassen für Empfindlichkeit
     lastTouchPosition = currentTouch;
     requestAnimationFrame(smoothTouchScroll);
 }, { passive: false });
