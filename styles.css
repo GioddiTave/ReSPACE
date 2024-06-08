@@ -175,6 +175,10 @@ html, body {
     width: 100vw;   
 }
 
+.logo-hero {
+    display: none;
+}
+
 .hero-content {
     align-content: center;
     align-items: center;
@@ -483,7 +487,7 @@ html, body {
     display: flex;
     column-gap: 1em; 
 }
-
+/* 
 @media (max-width: 600px) {
 
     .inner {
@@ -523,4 +527,62 @@ html, body {
             max-width: 30em;
         }
     
+} */
+
+@media (max-width: 768px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between; 
+        padding: 1rem 0;
+        /* align-items: center; */
+        flex-direction: column;
+    }
+
+
+/* order: -1;   */
+    /* .logo {
+        
+        width: 100%;
+        display: flex;
+        justify-content: left;
+        padding-left: 2rem;
+        padding-top: 2rem;
+    } */
+
+    .logo {
+        display: none;
+    }
+
+    /* .logo img {
+        height: auto;
+        width: 4rem; 
+    } */
+
+    .logo-hero {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        width: 4rem; 
+    }
+
+    .hamburger {
+        position: fixed;
+        bottom: 2rem; 
+        /* width: 100%; */
+        height: 2em;
+        width: 2em;
+        display: flex;
+        justify-content: center;
+        background-color: #1D2F3B; /* Dunkelblauer Hintergrund */
+        border-radius: 50%; /* Kreisform */
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3); /* Leichter Schatten für bessere Sichtbarkeit */
+        z-index: 1500; 
+    }
+
 }
