@@ -34,7 +34,7 @@ function smoothScroll() {
 
 document.addEventListener('wheel', (e) => {
     e.preventDefault();
-    deltaY = e.deltaY * 6; // Multiplikator zur Geschwindigkeitsanpassung
+    deltaY = e.deltaY * 3; // Multiplikator zur Geschwindigkeitsanpassung
     requestAnimationFrame(smoothScroll);
 }, { passive: false });
 
