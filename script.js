@@ -1,4 +1,4 @@
-document.addEventListener('wheel', (e) => {
+/* document.addEventListener('wheel', (e) => {
     e.preventDefault();
     document.querySelector('.container').scrollLeft += e.deltaY;
 }, { passive: false });
@@ -16,7 +16,46 @@ document.addEventListener('touchmove', (e) => {
 
 document.addEventListener('touchend', () => {
     window.startTouch = null;
+}, { passive: false }); */
+
+let lastYPosition = 0;
+let deltaY = 0;
+
+function smoothScroll() {
+    const container = document.querySelector('.container');
+    if (lastYPosition === window.startTouch) {
+        requestAnimationFrame(smoothScroll);
+        return;
+    }
+
+    container.scrollLeft += deltaY;
+    requestAnimationFrame(smoothScroll);
+}
+
+document.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    deltaY = e.deltaY * 1.5; // Multiplikator zur Geschwindigkeitsanpassung
+    requestAnimationFrame(smoothScroll);
 }, { passive: false });
+
+document.addEventListener('touchstart', (e) => {
+    window.startTouch = e.touches[0].clientX;
+    lastYPosition = window.startTouch;
+}, { passive: false });
+
+document.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    deltaY = (window.startTouch - e.touches[0].clientX) * 1.5; // Multiplikator zur Geschwindigkeitsanpassung
+    window.startTouch = e.touches[0].clientX;
+    requestAnimationFrame(smoothScroll);
+}, { passive: false });
+
+document.addEventListener('touchend', () => {
+    window.startTouch = null;
+    deltaY = 0; // Stoppt das Scrollen, wenn die Berührung endet
+}, { passive: false });
+
+
 
 /* document.querySelector('.container').addEventListener('scroll', () => {
     const sections = document.querySelectorAll('.section'); // Wähle alle Sektionen
