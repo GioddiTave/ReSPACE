@@ -18,41 +18,39 @@ document.addEventListener('touchend', () => {
     window.startTouch = null;
 }, { passive: false }); */
 
-let lastYPosition = 0;
-let deltaY = 0;
+let lastTouchPosition = 0;
+let touchScrollVelocity = 0;
 
-function smoothScroll() {
+function smoothTouchScroll() {
     const container = document.querySelector('.container');
-    if (lastYPosition === window.startTouch) {
-        requestAnimationFrame(smoothScroll);
-        return;
+    if (Math.abs(touchScrollVelocity) > 0.5) { // Schwellenwert für das Stoppen des Scrollens
+        container.scrollLeft += touchScrollVelocity;
+        touchScrollVelocity *= 0.95; // Dämpfungskoeffizient, um das Scrollen allmählich zu verlangsamen
+        requestAnimationFrame(smoothTouchScroll);
+    } else {
+        touchScrollVelocity = 0; // Stoppt das Scrollen
     }
-
-    container.scrollLeft += deltaY;
-    requestAnimationFrame(smoothScroll);
 }
 
 document.addEventListener('wheel', (e) => {
     e.preventDefault();
-    deltaY = e.deltaY * 1.5; // Multiplikator zur Geschwindigkeitsanpassung
-    requestAnimationFrame(smoothScroll);
+    document.querySelector('.container').scrollLeft += e.deltaY;
 }, { passive: false });
 
 document.addEventListener('touchstart', (e) => {
-    window.startTouch = e.touches[0].clientX;
-    lastYPosition = window.startTouch;
+    lastTouchPosition = e.touches[0].clientX;
 }, { passive: false });
 
 document.addEventListener('touchmove', (e) => {
     e.preventDefault();
-    deltaY = (window.startTouch - e.touches[0].clientX) * 1; // Multiplikator zur Geschwindigkeitsanpassung
-    window.startTouch = e.touches[0].clientX;
-    requestAnimationFrame(smoothScroll);
+    let currentTouch = e.touches[0].clientX;
+    touchScrollVelocity += (lastTouchPosition - currentTouch) * 0.5; // Anpassen für Empfindlichkeit
+    lastTouchPosition = currentTouch;
+    requestAnimationFrame(smoothTouchScroll);
 }, { passive: false });
 
 document.addEventListener('touchend', () => {
-    window.startTouch = null;
-    deltaY = 0; // Stoppt das Scrollen, wenn die Berührung endet
+    touchScrollVelocity = 0; // Setzt die Scrollgeschwindigkeit zurück, wenn die Berührung endet
 }, { passive: false });
 
 
