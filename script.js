@@ -34,7 +34,7 @@ function smoothScroll() {
 
 document.addEventListener('wheel', (e) => {
     e.preventDefault();
-    deltaY = e.deltaY * 1; // Multiplikator zur Geschwindigkeitsanpassung
+    deltaY = e.deltaY * 1.5; // Multiplikator zur Geschwindigkeitsanpassung
     requestAnimationFrame(smoothScroll);
 }, { passive: false });
 
@@ -45,7 +45,7 @@ document.addEventListener('touchstart', (e) => {
 
 document.addEventListener('touchmove', (e) => {
     e.preventDefault();
-    deltaY = (window.startTouch - e.touches[0].clientX) * 1.5; // Multiplikator zur Geschwindigkeitsanpassung
+    deltaY = (window.startTouch - e.touches[0].clientX) * 1; // Multiplikator zur Geschwindigkeitsanpassung
     window.startTouch = e.touches[0].clientX;
     requestAnimationFrame(smoothScroll);
 }, { passive: false });
