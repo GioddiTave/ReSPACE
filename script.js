@@ -23,9 +23,9 @@ let touchScrollVelocity = 0;
 
 function smoothTouchScroll() {
     const container = document.querySelector('.container');
-    if (Math.abs(touchScrollVelocity) > 0.3) { // Schwellenwert für das Stoppen des Scrollens
+    if (Math.abs(touchScrollVelocity) > 0.5) { // Schwellenwert für das Stoppen des Scrollens
         container.scrollLeft += touchScrollVelocity;
-        touchScrollVelocity *= 0.9; // Dämpfungskoeffizient, um das Scrollen allmählich zu verlangsamen
+        touchScrollVelocity *= 0.95; // Dämpfungskoeffizient, um das Scrollen allmählich zu verlangsamen
         requestAnimationFrame(smoothTouchScroll);
     } else {
         touchScrollVelocity = 0; // Stoppt das Scrollen
