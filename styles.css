@@ -585,4 +585,421 @@ html, body {
         z-index: 1500; 
     }
 
+
+    .accent-text-scifi ,.accent-text p, .accent-text-by,.accent-text-nasa, .accent-text-music {
+        font-family: 'Geostar Fill', cursive;
+        font-size: 1rem;
+    }
+    
+    .accent-text-scifi, .accent-text-by {
+        padding-top: 3em;
+    }
+    
+    .content, .content-nasa, .scifi-content, .content-by {
+        position: flex;
+        background-color: #F2D0B4;
+        color: #1D2F3B;
+        padding-top: 5em;
+    }
+    
+    .content h2, .content-nasa h2, .scifi-content h2, .content-by h2 {
+        font-size: 2rem;
+        align-self: start;
+        text-align: left;
+    }
+    
+    .content p, .content-nasa p, .scifi-content p, .content-by p {
+        font-size: 1rem;
+        text-align: left;
+        padding-top: 3em;
+        width: 30em;
+    }
+    
+    
+    .rules-header h3, .news h3, .playlist-content h3, .stories h3{
+        font-size: 1.3rem;
+        padding-top: 5em;
+        padding-bottom: 2em;
+    }
+    
+    .playlist-content p{
+        font-size: 0.8rem;
+        padding-top: 1em;
+    }
+    
+    .spock-content, .mark-content {
+        column-gap: 1em; 
+    }
+    
+    .stories {
+        column-gap: 2em;  
+    }
+    
+    .spock-content, .mark-content {
+        grid-template-columns: 1fr 2fr 2fr;  
+    }
+    
+    .question {
+        font-family: 'Geostar Fill', cursive;
+        padding-bottom: 0.5em;
+    }
+    
+    .answer {
+        font-family: 'Lato', sans-serif;
+        padding-bottom: 2em;
+    }
+    
+    .spock-content h4, .mark-content h4  {
+        padding-top: 1em;
+    }
+
+
+
+
+/* Neuer Teil */
+
+
+
+.content, .content-nasa, .scifi-content, .content-by {
+    position: flex;
+    background-color: #F2D0B4;
+    color: #1D2F3B;
+    padding-top: 5em;
+}
+
+.content h2, .content-nasa h2, .scifi-content h2, .content-by h2 {
+    font-size: 2rem;
+    align-self: start;
+    text-align: left;
+}
+
+.content p, .content-nasa p, .scifi-content p, .content-by p {
+    font-size: 1rem;
+    text-align: left;
+    padding-top: 3em;
+    width: 20em;
+}
+
+
+.rules-header h3, .news h3, .playlist-content h3, .stories h3{
+    font-size: 1.3rem;
+    padding-top: 5em;
+    padding-bottom: 2em;
+} 
+
+/* .playlist-content p{
+    font-size: 0.8rem;
+    padding-top: 1em;
+} */
+
+.spock-content, .mark-content {
+    column-gap: 12em; 
+}
+
+.stories {
+    column-gap: 2em;  
+}
+
+.spock-content, .mark-content {
+    grid-template-columns: 1fr 2fr;  
+}
+
+/* .question {
+    font-family: 'Geostar Fill', cursive;
+    padding-bottom: 0.5em;
+}
+
+.answer {
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 2em;
+} */
+
+/* .spock-content h4, .mark-content h4  {
+    padding-top: 1em;
+} */
+
+
+/* .welcome {
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    grid-template-areas: 
+    'welcome rules'; 
+}
+
+.content {
+    grid-area: welcome;    
+} */
+
+
+.accent-text {
+    display: grid;
+    width: 20rem;
+    padding-top: 3em;
+    grid-template-columns: 1fr 5fr;
+    grid-column-gap: 1.5em;
+    grid-template-areas: 
+    'bild text';
+    align-items: center;
+}
+.accent-text img {
+    grid-area: bild;
+    height: 5em;
+}
+
+.accent-text p {
+    grid-area: text;
+    background-color: #4DAD6E;
+    padding: 1em 0.2em;  
+    width: 15em;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+}
+.accent-text p:hover {
+    background-color: #4EA2AC; 
+}
+
+
+.rules-header{
+    grid-area: rules;   
+}
+.rules {
+    display: grid;
+    grid-template-columns: 1fr 7fr; 
+    grid-template-rows: auto;
+    grid-row-gap: 1em; 
+    grid-column-gap: 1.5em;
+    align-items: center;
+}
+
+.rules img {
+    height: 4em;
+    width: 4em;
+}
+
+.rules p {
+    width: 12em;
+}
+
+.nasa {
+    display: grid;
+    grid-template-columns: 5fr 2fr; 
+    grid-template-areas: 'nasa news'; 
+}
+
+.content-nasa {
+    grid-area: nasa; 
+}
+
+
+
+.news {
+    grid-area: news;
+    text-align: center;
+    padding: 2em;
+
+    
+}
+
+
+.news-button {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-row-gap: 0.5em;    
+         
+}
+
+.button {  
+    background-color: #4DAD6E;
+    padding: 1em 3em;  
+    width: 15em;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: #4EA2AC; 
+}
+
+.Sci-Fi {
+    display: grid;
+    grid-template-columns: 7fr 4fr;
+    grid-template-areas: 
+    'scifi playlist';    
+}
+
+.scifi-content {
+    grid-area: scifi; 
+}
+
+
+.playlist-content {
+    grid-area: playlist;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-right: 10em;
+}
+
+.accent-text-music {
+    padding-bottom: 1em;
+}
+
+.playlist-content img {
+    height: 10em;
+    width: 10em;
+    
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    cursor: pointer;
+}
+
+.left {
+    border-width: 1rem 1rem 1rem 0;
+    border-color: transparent #000000 transparent transparent; 
+    margin-right: 20px; 
+}
+
+.right {
+    border-width: 1rem 0 1rem 1rem;
+    border-color: transparent transparent transparent #000000;
+    margin-left: 20px;
+}
+
+
+.cover-container {
+    text-align: center;
+    margin: 0 20px; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.stories {
+    display: grid;
+   grid-template-columns: auto auto;  
+    grid-template-areas: 
+    'title title'
+    'spock mark';
+}
+
+
+.stories h3 {
+    grid-area: title;
+}
+
+.spock-content {
+    grid-area: spock;
+    display: grid;
+    grid-template-areas: 'b1 p1 p1a';
+}
+
+
+.b1 {
+    grid-area: b1;
+}
+
+.p1 {
+    grid-area: p1;
+    max-width: 20em;
+    min-width: 15em;
+}
+
+.p1a {
+    grid-area: p1a;
+    max-width: 20em;
+    min-width: 15em;
+   
+}
+
+
+
+.spock-content img {
+    width: 15em;
+    height:15em;
+    
+}
+
+
+.mark-content {
+    grid-area: mark;
+    display: grid;
+    grid-template-areas: 'b2 p2 p2a';
+}
+
+.mark-content img {
+    width: 15em;
+    height:15em;
+}
+
+
+
+.b2 {
+    grid-area: b2;
+}
+
+.p2 {
+    grid-area: p2;
+    max-width: 20em;
+    min-width: 15em;
+}
+
+.p2a {
+    grid-area: p2a;
+    max-width: 20em;
+    min-width: 15em;
+}
+
+.by {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.content-by {
+    width: 60vw;
+    
+}
+
+.accent-text-by {
+    max-width: 30em;
+    min-width: 15em;
+}
+
+
+
+
+.footer {    
+    background-color: #1D2F3B;    
+    color: #F2D0B4;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding-left: 5em;
+    height: 100vh; 
+    width: 20vw; 
+}
+
+.footer p {
+    max-width: 10em;
+    text-align: left;
+}
+
+.icon {
+    width: 2em;
+    height: 2em;
+    display: flex;
+    column-gap: 1em; 
+}
+
 }
