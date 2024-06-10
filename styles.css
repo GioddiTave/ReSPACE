@@ -741,49 +741,49 @@ html, body {
     'bild text';
     align-items: center;
 }
-.accent-text img {
+/* .accent-text img {
     grid-area: bild;
     height: 5em;
-}
+} */
 
 .accent-text p {
     grid-area: text;
     background-color: #4DAD6E;
     padding: 1em 0.2em;  
-    width: 15em;
+    width: 13em;
     text-align: center;
     display: inline-block;
     cursor: pointer;
     border: none;
     border-radius: 3px;
 }
-.accent-text p:hover {
+/* .accent-text p:hover {
     background-color: #4EA2AC; 
-}
+} */
 
 
-.rules-header{
+/* .rules-header{
     grid-area: rules;   
-}
-.rules {
+} */
+/* .rules {
     display: grid;
     grid-template-columns: 1fr 7fr; 
     grid-template-rows: auto;
     grid-row-gap: 1em; 
     grid-column-gap: 1.5em;
     align-items: center;
-}
+} */
 
-.rules img {
+/* .rules img {
     height: 4em;
     width: 4em;
-}
+} */
 
-.rules p {
+/* .rules p {
     width: 12em;
-}
+} */
 
-.nasa {
+/* .nasa {
     display: grid;
     grid-template-columns: 5fr 2fr; 
     grid-template-areas: 'nasa news'; 
@@ -792,26 +792,25 @@ html, body {
 .content-nasa {
     grid-area: nasa; 
 }
-
+ */
 
 
 .news {
     grid-area: news;
     text-align: center;
-    padding: 2em;
-
-    
+    padding: 0em;
+    padding-right: 9em;
 }
 
 
-.news-button {
+/* .news-button {
     display: grid;
     grid-template-rows: auto auto auto;
     grid-row-gap: 0.5em;    
          
 }
-
-.button {  
+ */
+/* .button {  
     background-color: #4DAD6E;
     padding: 1em 3em;  
     width: 15em;
@@ -824,8 +823,8 @@ html, body {
 .button:hover {
     background-color: #4EA2AC; 
 }
-
-.Sci-Fi {
+ */
+/* .Sci-Fi {
     display: grid;
     grid-template-columns: 7fr 4fr;
     grid-template-areas: 
@@ -835,9 +834,9 @@ html, body {
 .scifi-content {
     grid-area: scifi; 
 }
+ */
 
-
-.playlist-content {
+/* .playlist-content {
     grid-area: playlist;
     text-align: center;
     display: flex;
@@ -845,9 +844,9 @@ html, body {
     justify-content: start;
     align-items: center;
     padding-right: 10em;
-}
+} */
 
-.accent-text-music {
+/* .accent-text-music {
     padding-bottom: 1em;
 }
 
@@ -874,37 +873,39 @@ html, body {
     border-width: 1rem 0 1rem 1rem;
     border-color: transparent transparent transparent #000000;
     margin-left: 20px;
-}
+} */
 
 
-.cover-container {
+/* .cover-container {
     text-align: center;
     margin: 0 20px; 
     display: flex;
     flex-direction: row;
     align-items: center;
-}
+} */
 
-.stories {
+/* .stories {
     display: grid;
    grid-template-columns: auto auto;  
     grid-template-areas: 
     'title title'
     'spock mark';
-}
+} */
 
 
-.stories h3 {
+/* .stories h3 {
     grid-area: title;
-}
+} */
 
 .spock-content {
     grid-area: spock;
     display: grid;
-    grid-template-areas: 'b1 p1 p1a';
+    grid-template-areas: 
+    'b1 p1 '
+    'b1 p1a';
 }
 
-
+/* 
 .b1 {
     grid-area: b1;
 }
@@ -929,14 +930,16 @@ html, body {
     height:15em;
     
 }
-
+ */
 
 .mark-content {
     grid-area: mark;
     display: grid;
-    grid-template-areas: 'b2 p2 p2a';
+    grid-template-areas: 
+    'b2 p2 '
+    'b2 p2a';
 }
-
+/* 
 .mark-content img {
     width: 15em;
     height:15em;
@@ -959,19 +962,19 @@ html, body {
     max-width: 20em;
     min-width: 15em;
 }
-
-.by {
+ */
+/* .by {
     display: grid;
     grid-template-columns: auto;
 }
-
+ */
 .content-by {
-    width: 60vw;
+    width: 100vw;
     
 }
 
 .accent-text-by {
-    max-width: 30em;
+    max-width: 20em;
     min-width: 15em;
 }
 
@@ -985,13 +988,13 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    padding-left: 5em;
+    /* padding-left: 5em; */
     height: 100vh; 
-    width: 20vw; 
+    width: 100vw; 
 }
 
 .footer p {
-    max-width: 10em;
+    max-width: 15em;
     text-align: left;
 }
 
