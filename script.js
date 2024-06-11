@@ -18,7 +18,7 @@ document.addEventListener('touchend', () => {
     window.startTouch = null;
 }, { passive: false }); */
 
-let lastTouchPosition = 0;
+/* let lastTouchPosition = 0;
 let touchScrollVelocity = 0;
 
 function smoothTouchScroll() {
@@ -44,6 +44,42 @@ document.addEventListener('touchstart', (e) => {
 document.addEventListener('touchmove', (e) => {
     e.preventDefault();
     let currentTouch = e.touches[0].clientX;
+    touchScrollVelocity += (lastTouchPosition - currentTouch) * 0.2; // Anpassen für Empfindlichkeit
+    lastTouchPosition = currentTouch;
+    requestAnimationFrame(smoothTouchScroll);
+}, { passive: false });
+
+document.addEventListener('touchend', () => {
+    touchScrollVelocity = 0; // Setzt die Scrollgeschwindigkeit zurück, wenn die Berührung endet
+}, { passive: false });
+ */
+
+let lastTouchPosition = 0;
+let touchScrollVelocity = 0;
+
+function smoothTouchScroll() {
+    const container = document.querySelector('.container');
+    if (Math.abs(touchScrollVelocity) > 0.4) { // Schwellenwert für das Stoppen des Scrollens
+        container.scrollLeft += touchScrollVelocity;
+        touchScrollVelocity *= 0.95; // Dämpfungskoeffizient, um das Scrollen allmählich zu verlangsamen
+        requestAnimationFrame(smoothTouchScroll);
+    } else {
+        touchScrollVelocity = 0; // Stoppt das Scrollen
+    }
+}
+
+document.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    document.querySelector('.container').scrollLeft += e.deltaY;
+}, { passive: false });
+
+document.addEventListener('touchstart', (e) => {
+    lastTouchPosition = e.touches[0].clientY; // Änderung zu clientY für vertikalen Input
+}, { passive: false });
+
+document.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    let currentTouch = e.touches[0].clientY; // Änderung zu clientY für vertikalen Input
     touchScrollVelocity += (lastTouchPosition - currentTouch) * 0.2; // Anpassen für Empfindlichkeit
     lastTouchPosition = currentTouch;
     requestAnimationFrame(smoothTouchScroll);
