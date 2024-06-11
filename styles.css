@@ -681,7 +681,7 @@ html, body {
 }
 
 
-.rules-header h3, .news h3, .playlist-content h3, .stories h3{
+.rules-header h3, .news h3, .playlist-content h3 {
     font-size: 1.3rem;
     padding-top: 5em;
     padding-bottom: 2em;
@@ -704,15 +704,17 @@ html, body {
     grid-template-columns: 1fr 2fr;  
 }
 
-/* .question {
+.question {
     font-family: 'Geostar Fill', cursive;
     padding-bottom: 0.5em;
+    font-size: 0.9em;
 }
 
 .answer {
     font-family: 'Lato', sans-serif;
-    padding-bottom: 2em;
-} */
+    padding-bottom: 1.5em;
+    font-size: 0.9em;
+}
 
 /* .spock-content h4, .mark-content h4  {
     padding-top: 1em;
@@ -893,9 +895,9 @@ html, body {
 } */
 
 
-/* .stories h3 {
+.stories h3 {
     grid-area: title;
-} */
+}
 
 .spock-content {
     grid-area: spock;
@@ -987,22 +989,28 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     /* padding-left: 5em; */
     height: 100vh; 
     width: 100vw; 
+    padding-right: 4em;
 }
 
 .footer p {
     max-width: 15em;
-    text-align: left;
+    text-align: center;
 }
 
 .icon {
     width: 2em;
     height: 2em;
     display: flex;
-    column-gap: 1em; 
+    column-gap: 1em;
+    justify-content: center; 
+    align-items: center;
+   
+
+     
 }
 
 }
