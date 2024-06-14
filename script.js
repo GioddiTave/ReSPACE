@@ -89,6 +89,80 @@ document.addEventListener('touchend', () => {
     touchScrollVelocity = 0; // Setzt die Scrollgeschwindigkeit zurück, wenn die Berührung endet
 }, { passive: false });
 
+function toggleFullImage() {
+    var imageDiv = document.getElementById('fullScreenImage');
+    if (imageDiv.style.display === 'none') {
+        imageDiv.style.display = 'flex'; // Show the full-screen image
+    } else {
+        imageDiv.style.display = 'none'; // Hide the full-screen image
+    }
+}
+
+function closeFullImage() {
+    var imageDiv = document.getElementById('fullScreenImage');
+    imageDiv.style.display = 'none'; // Versteckt das Vollbild
+}
+
+/* LOGO COLD */
+/* 
+document.addEventListener('DOMContentLoaded', () => {
+    const navbarLogoLight = document.querySelector('.navbar .logo-light');
+    const navbarLogoDark = document.querySelector('.navbar .logo-dark');
+    const heroLogoLight = document.querySelector('.logo-hero .logo-light');
+    const heroLogoDark = document.querySelector('.logo-hero .logo-dark');
+    
+    if (!navbarLogoLight || !navbarLogoDark || !heroLogoLight || !heroLogoDark) {
+        console.error("One or more logo elements are missing.");
+        return;
+    }
+    
+    const sections = document.querySelectorAll('.section');
+    
+    const observer = new IntersectionObserver((entries) => {
+        console.log("Intersection Observer is running...");
+        entries.forEach(entry => {
+            console.log(`Section: ${entry.target.className}, is intersecting: ${entry.isIntersecting}`);
+            if (entry.isIntersecting) {
+                const requiresDarkLogo = entry.target.classList.contains('welcome') || 
+                                         entry.target.classList.contains('nasa') ||
+                                         entry.target.classList.contains('Sci-Fi') ||
+                                         entry.target.classList.contains('stories') ||
+                                         entry.target.classList.contains('content-by');
+
+                console.log(`Is dark background: ${requiresDarkLogo}`);
+
+                if (requiresDarkLogo) {
+                    navbarLogoLight.style.display = 'none';
+                    navbarLogoDark.style.display = 'block';
+                    heroLogoLight.style.display = 'none';
+                    heroLogoDark.style.display = 'block';
+                    console.log("Displaying dark logo.");
+                } else {
+                    navbarLogoLight.style.display = 'block';
+                    navbarLogoDark.style.display = 'none';
+                    heroLogoLight.style.display = 'block';
+                    heroLogoDark.style.display = 'none';
+                    console.log("Displaying light logo.");
+                }
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+        console.log(`Observing section: ${section.className}`);
+    });
+
+    document.querySelector('.container').addEventListener('scroll', () => {
+        console.log("Scrolling...");
+    });
+});
+ */
+
 
 
 /* document.querySelector('.container').addEventListener('scroll', () => {

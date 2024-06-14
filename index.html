@@ -14,7 +14,8 @@
 <body>
     <div class="navbar">
         <div class="logo">
-            <img src="./Bilder/Logo beige.svg" alt="LOGO">
+            <img src="./Bilder/Logo beige.svg" alt="LOGO" class="logo-light">
+            <img src="./Bilder/Logo blue.svg" alt="LOGO" class="logo-dark" style="display: none;">
         </div>
         <div class="hamburger">&#9776;</div> 
     </div>
@@ -25,7 +26,8 @@
                     <div class="hero">
                         <div class="hero-content">
                             <div class="logo logo-hero">
-                                <img src="./Bilder/Logo beige.svg" alt="LOGO">
+                                <img src="./Bilder/Logo beige.svg" alt="LOGO" class="logo-light">
+                                <img src="./Bilder/Logo blue.svg" alt="LOGO" class="logo-dark" style="display: none;">
                             </div>
                                     <h1>SPACE</h1>
                                     <img src="./Bilder/arrow up-down.svg" alt="Scroll Icon">
@@ -65,10 +67,16 @@
                                 Space is full of surprises, so keep your wits about you and enjoy 
                                 the adventure!
                             </p> 
-                                <div class="accent-text">
+                                <div class="accent-text" onclick="toggleFullImage()">
                                 <img src="./Bilder/Astronaut helmet.svg" alt="Helmet">
                                 <p>Don‘t forget to put your helmet on!</p>
-                                </div>                    
+                                </div>             
+                                <!-- Fullscreen image container, initially hidden -->
+                                <div id="fullScreenImage" style="display:none;">
+                                    <span class="close-button" onclick="closeFullImage()">&#x2715;</span>
+                                    <img src="./Bilder/inbside.svg" alt="Full Screen Helmet Desktop" class="desktop-image" style="width:100%; height:100vh;"> <!-- NEU: Desktop-Bild -->
+                                    <img src="./Bilder/inside-mobile.svg" alt="Full Screen Helmet Mobile" class="mobile-image" style="width:100%; height:100vh;">
+                                </div>       
                         </div>
                         <div class="rules-header">
                             <h3>Security in Space</h3>
@@ -317,6 +325,7 @@
                     </div>
                 </div>
             </div>
+            <script src="script.js" defer></script>
         <!-- </div> -->
     </div>
 </body>
