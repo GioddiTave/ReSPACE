@@ -247,6 +247,7 @@ html, body {
 .illustration {
     height: 100vh;
     display: flex; 
+    background-color:  #1D2F3B;
 }
 
 .welcome {
@@ -784,6 +785,14 @@ html, body {
 }
  */
 
+ .hidden {
+    display: none; /* Stellt sicher, dass Elemente nicht angezeigt werden */
+}
+.show {
+    display: block; /* Stellt sicher, dass Elemente angezeigt werden */
+    opacity: 1;
+    transform: translateY(0);
+}
 
 .stories h3 {
     grid-area: title;

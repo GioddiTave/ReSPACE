@@ -94,59 +94,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-/* 
-document.addEventListener('DOMContentLoaded', () => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Einzelne Parallax-Effekte für jeden Abschnitt
-    const sections = {
-        'transition': { speed: 0.1, depth: 00 },
-        'illustration': { speed: 0.5, depth: 0 },
-        'welcome': { speed: 0.3, depth: 20 },
-        'nasa': { speed: 0.7, depth: 30 },
-        'Sci-Fi': { speed: 0.8, depth: -20 },
-        'stories': { speed: 0.4, depth: -20 },
-        'by': { speed: 0.2, depth: 10 }
-    };
-
-    Object.keys(sections).forEach(key => {
-        const section = document.querySelector(`.${key}`);
-        const config = sections[key];
-
-        if (section) {
-            gsap.fromTo(section, {
-                x: `-=${config.depth}%`
-            }, {
-                x: `+=${config.depth}%`,
-                scrollTrigger: {
-                    trigger: section,
-                    start: "center center",
-                    end: "center center",
-                    scrub: true,
-                    horizontal: true,
-                    markers: true
-                },
-                ease: "none"
-            });
-        }
-    });
-}); */
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('show'); // NEU: Fügt die 'show' Klasse hinzu
+                entry.target.classList.add('show'); // Fügt die 'show' Klasse hinzu
             } else {
-                entry.target.classList.remove('show'); // NEU: Entfernt die 'show' Klasse
+                entry.target.classList.remove('show'); // Entfernt die 'show' Klasse
             }
         });
     }, {
-        threshold: 0.5 // NEU: Einstellen des Sichtbarkeitsschwellenwerts
+        rootMargin: '100px 0px 100px 0px', // Erweitert den Beobachtungsbereich oben und unten
+        threshold: 0.05 // 5% des Elements müssen sichtbar sein
     });
 
-    // NEU: Auswahl der spezifischen Elemente, auf die die Effekte angewendet werden sollen
+    // Auswahl der spezifischen Elemente, auf die die Effekte angewendet werden sollen
     const elementsToAnimate = document.querySelectorAll('.content, .rules-header, .content-nasa, .news, .scifi-content, .spock-content, .mark-content, .content-by');
-    elementsToAnimate.forEach(el => observer.observe(el)); // NEU: Beobachten dieser Elemente
+    elementsToAnimate.forEach(el => observer.observe(el));
 });
