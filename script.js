@@ -53,6 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
         let iterations = 0;
         const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         const originalText = target.getAttribute('data-value');
+        let intervalDuration = target.tagName === 'H2' ? 15 : 5; // Schneller für h2, langsamer für h3
+
         const interval = setInterval(() => {
             target.innerText = originalText.split("")
             .map((letter, index) => {
@@ -68,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             iterations += 0.1; // Verlangsamt die Rate der "Enthüllung" der Buchstaben
-        }, 15); // Erhöht die Dauer des Intervalls für einen langsameren Effekt
+        }, intervalDuration);
     }
 
     const observer = new IntersectionObserver((entries) => {
@@ -83,11 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.5 // Stellt ein, wie viel eines Elements sichtbar sein muss
     });
 
-    // NEU: Inkludiert sowohl h2 als auch h3 Elemente im Observer
+    // Beobachtet jedes h2 und h3 Element für den Sichtbarkeitseffekt
     document.querySelectorAll('h2[data-value], h3[data-value]').forEach(element => {
-        observer.observe(element); // Beobachtet jedes h2 und h3 Element für den Sichtbarkeitseffekt
+        observer.observe(element);
     });
 });
+
 
 
 
