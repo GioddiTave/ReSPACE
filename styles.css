@@ -292,13 +292,13 @@ html, body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100%;
-    display: none; /* Start hidden */
+    width: 100vw; /* Stellt die Breite auf 100% des Viewports ein */
+    height: 100vh; /* Änderung von 10vh auf 100vh */
+    display: none; /* Startet versteckt */
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background for overlay */
-    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5); /* Leicht transparenter Hintergrund */
+    z-index: 1000; /* Stellt sicher, dass es über anderen Inhalten liegt */
 }
 
 .close-button {
