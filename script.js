@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             iterations += 0.1; // Verlangsamt die Rate der "Enthüllung" der Buchstaben
-        }, 30); // Erhöht die Dauer des Intervalls für einen langsameren Effekt
+        }, 15); // Erhöht die Dauer des Intervalls für einen langsameren Effekt
     }
 
     const observer = new IntersectionObserver((entries) => {
@@ -91,3 +91,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+/* 
+document.addEventListener('DOMContentLoaded', () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Einzelne Parallax-Effekte für jeden Abschnitt
+    const sections = {
+        'transition': { speed: 0.1, depth: 00 },
+        'illustration': { speed: 0.5, depth: 0 },
+        'welcome': { speed: 0.3, depth: 20 },
+        'nasa': { speed: 0.7, depth: 30 },
+        'Sci-Fi': { speed: 0.8, depth: -20 },
+        'stories': { speed: 0.4, depth: -20 },
+        'by': { speed: 0.2, depth: 10 }
+    };
+
+    Object.keys(sections).forEach(key => {
+        const section = document.querySelector(`.${key}`);
+        const config = sections[key];
+
+        if (section) {
+            gsap.fromTo(section, {
+                x: `-=${config.depth}%`
+            }, {
+                x: `+=${config.depth}%`,
+                scrollTrigger: {
+                    trigger: section,
+                    start: "center center",
+                    end: "center center",
+                    scrub: true,
+                    horizontal: true,
+                    markers: true
+                },
+                ease: "none"
+            });
+        }
+    });
+}); */
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show'); // NEU: Fügt die 'show' Klasse hinzu
+            } else {
+                entry.target.classList.remove('show'); // NEU: Entfernt die 'show' Klasse
+            }
+        });
+    }, {
+        threshold: 0.5 // NEU: Einstellen des Sichtbarkeitsschwellenwerts
+    });
+
+    // NEU: Auswahl der spezifischen Elemente, auf die die Effekte angewendet werden sollen
+    const elementsToAnimate = document.querySelectorAll('.content, .rules-header, .content-nasa, .news, .scifi-content, .spock-content, .mark-content, .content-by');
+    elementsToAnimate.forEach(el => observer.observe(el)); // NEU: Beobachten dieser Elemente
+});
