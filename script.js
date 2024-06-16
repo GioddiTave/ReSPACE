@@ -94,22 +94,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
+    let thresholdValue = 0.1; // Standard Threshold für Desktop
+    let rootMarginValue = '100px 0px 100px 0px'; // Standard Root Margin für Desktop
+
+    // Überprüfung, ob es sich um ein mobiles Gerät handelt
+    if (window.innerWidth <= 768) { // Angenommene maximale Breite für mobile Geräte
+        thresholdValue = 0.05; // Niedrigerer Threshold, damit Elemente schneller als sichtbar gelten
+        rootMarginValue = '50px 0px 50px 0px'; // Kleinerer Root Margin für Mobilgeräte
+    }
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('show'); // Fügt die 'show' Klasse hinzu
+                entry.target.classList.add('show');
             } else {
-                entry.target.classList.remove('show'); // Entfernt die 'show' Klasse
+                entry.target.classList.remove('show');
             }
         });
     }, {
-        rootMargin: '100px 0px 100px 0px', // Erweitert den Beobachtungsbereich oben und unten
-        threshold: 0.05 // 5% des Elements müssen sichtbar sein
+        rootMargin: rootMarginValue,
+        threshold: thresholdValue
     });
 
-    // Auswahl der spezifischen Elemente, auf die die Effekte angewendet werden sollen
     const elementsToAnimate = document.querySelectorAll('.content, .rules-header, .content-nasa, .news, .scifi-content, .spock-content, .mark-content, .content-by');
     elementsToAnimate.forEach(el => observer.observe(el));
 });
