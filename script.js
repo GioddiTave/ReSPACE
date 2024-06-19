@@ -30,12 +30,12 @@
         }, { passive: false });
 
         document.addEventListener('touchstart', (e) => {
-            lastTouchPosition = e.touches[0].clientY;
+            lastTouchPosition = e.touches[0].clientX;
         }, { passive: false });
 
         document.addEventListener('touchmove', (e) => {
             e.preventDefault();
-            let currentTouch = e.touches[0].clientY;
+            let currentTouch = e.touches[0].clientX;
             touchScrollVelocity += (lastTouchPosition - currentTouch) * 0.2;
             lastTouchPosition = currentTouch;
             requestAnimationFrame(smoothTouchScroll);
@@ -59,6 +59,28 @@
             });
             observer.observe(element);
         });
+    }
+
+    function applyEffect(target) {
+        let iterations = 0;
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const originalText = target.getAttribute('data-value');
+        const interval = setInterval(() => {
+            target.innerText = originalText.split("")
+            .map((letter, index) => {
+                if (index < iterations) {
+                    return originalText[index]; // Zeigt den echten Buchstaben
+                }
+                return letters[Math.floor(Math.random() * letters.length)]; // Zufälliger Buchstabe sonst
+            })
+            .join("");
+
+            if (iterations >= originalText.length) {
+                clearInterval(interval); // Stoppt das Intervall, wenn das letzte Zeichen erreicht ist
+            }
+
+            iterations += 0.1; // Verlangsamt die Rate der "Enthüllung" der Buchstaben
+        }, 30); // Erhöht die Dauer des Intervalls für einen langsameren Effekt
     }
 
     function createStarsForIllustration(starsContainer, isMobile) {
@@ -121,6 +143,24 @@
             illustration.appendChild(starsContainer);
 
             createStarsForIllustration(starsContainer, isMobile);
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    applyEffect(entry.target);
+                    observer.unobserve(entry.target); // Entfernt das Element aus dem Observer
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        });
+
+        // NEU: Inkludiert sowohl h2 als auch h3 Elemente im Observer
+        document.querySelectorAll('h2[data-value], h3[data-value]').forEach(element => {
+            observer.observe(element); // Beobachtet jedes h2 und h3 Element für den Sichtbarkeitseffekt
         });
     });
 })();
