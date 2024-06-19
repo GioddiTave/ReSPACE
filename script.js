@@ -13,12 +13,13 @@
         }
     }
 
-    function toggleFullImage() {
+    // Globale Funktionen für Fullscreen-Image
+    window.toggleFullImage = function() {
         const imageDiv = document.getElementById('fullScreenImage');
         imageDiv.style.display = imageDiv.style.display === 'none' ? 'flex' : 'none';
     }
 
-    function closeFullImage() {
+    window.closeFullImage = function() {
         document.getElementById('fullScreenImage').style.display = 'none';
     }
 
@@ -78,12 +79,12 @@
                 star.style.animationDuration = Math.random() * 5 + 15 + 's'; // Dauer der Animation zwischen 15s und 20s
             } else {
                 // Desktop Einstellungen
-                const size = (Math.random() * 1 + 0.5) + 'em'; // Größe zwischen 0.5em und 1.5em
+                const size = (Math.random() * 1 + 0.2) + 'em'; // Größe zwischen 0.5em und 1.5em
                 star.style.width = size;
                 star.style.height = size;
                 star.style.top = Math.random() * 100 + 'vh'; // Zufällige Höhe im Viewport
                 star.style.left = Math.random() * 100 + 'vw'; // Zufällige Breite im Viewport
-                star.style.animationDuration = Math.random() * 30 + 120 + 's'; // Dauer der Animation zwischen 10s und 15s
+                star.style.animationDuration = Math.random() * 2 + 50 + 's'; // Dauer der Animation zwischen 30s und 150s
             }
 
             starsContainer.appendChild(star);
@@ -95,8 +96,8 @@
         }
 
         // Anzahl der initialen Sterne und Intervall basierend auf der Bildschirmgröße
-        const initialStars = isMobile ? 90 : 300;
-        const intervalTime = isMobile ? 1000 : 900;
+        const initialStars = isMobile ? 1 : 3; // HIER kannst du die Anzahl der initialen Sterne einstellen
+        const intervalTime = isMobile ? 1000 : 500; // HIER kannst du das Intervall für neue Sterne einstellen
 
         // Erstelle initiale Sterne
         for (let i = 0; i < initialStars; i++) {
