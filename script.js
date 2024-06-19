@@ -60,27 +60,31 @@
         });
     }
 
-    document.addEventListener("DOMContentLoaded", function() {
-        setupEventListeners();
-        animateText(); // Call the animateText function to initialize text animations
-
+    function createStarsForIllustration(starsContainer, isMobile) {
         const starImages = ['./Bilder/star1.svg', './Bilder/star2.svg', './Bilder/star3.svg'];
-        const illustrationElements = document.querySelectorAll('.illustration');
 
-        function createStar(starsContainer) {
+        function createStar() {
             const star = document.createElement('img');
             star.src = starImages[Math.floor(Math.random() * starImages.length)];
             star.classList.add('star');
 
-            // Zufällige Größe und Position
-            const size = (Math.random() * 1 + 0.2) + 'em'; // Größe zwischen 0.5em und 1.5em
-            star.style.width = size;
-            star.style.height = size;
-            star.style.top = Math.random() * 100 + 'vh'; // Zufällige Höhe im Viewport
-            star.style.left = Math.random() * 100 + 'vw'; // Zufällige Breite im Viewport
-
-            // EXTRA: Animation Dauer und Geschwindigkeit
-            star.style.animationDuration = Math.random() * 5 + 30 + 's'; // Dauer der Animation zwischen 5s und 10s
+            // Mobile Einstellungen
+            if (isMobile) {
+                const size = (Math.random() * 0.5 + 0.2) + 'em'; // Größe zwischen 0.2em und 0.7em
+                star.style.width = size;
+                star.style.height = size;
+                star.style.top = Math.random() * 100 + 'vh'; // Zufällige Höhe im Viewport
+                star.style.left = Math.random() * 600 + 'vw'; // Zufällige Breite im Viewport
+                star.style.animationDuration = Math.random() * 5 + 15 + 's'; // Dauer der Animation zwischen 15s und 20s
+            } else {
+                // Desktop Einstellungen
+                const size = (Math.random() * 1 + 0.5) + 'em'; // Größe zwischen 0.5em und 1.5em
+                star.style.width = size;
+                star.style.height = size;
+                star.style.top = Math.random() * 100 + 'vh'; // Zufällige Höhe im Viewport
+                star.style.left = Math.random() * 100 + 'vw'; // Zufällige Breite im Viewport
+                star.style.animationDuration = Math.random() * 30 + 120 + 's'; // Dauer der Animation zwischen 10s und 15s
+            }
 
             starsContainer.appendChild(star);
 
@@ -90,19 +94,32 @@
             });
         }
 
-        // Erstelle initiale Sterne und setze Intervalle für alle Illustrations
+        // Anzahl der initialen Sterne und Intervall basierend auf der Bildschirmgröße
+        const initialStars = isMobile ? 90 : 300;
+        const intervalTime = isMobile ? 1000 : 900;
+
+        // Erstelle initiale Sterne
+        for (let i = 0; i < initialStars; i++) {
+            createStar();
+        }
+
+        // Erstelle in regelmäßigen Abständen neue Sterne
+        setInterval(() => createStar(starsContainer), intervalTime);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        setupEventListeners();
+        animateText(); // Call the animateText function to initialize text animations
+
+        const illustrationElements = document.querySelectorAll('.illustration');
+        const isMobile = window.innerWidth <= 768;
+
         illustrationElements.forEach(illustration => {
             const starsContainer = document.createElement('div');
             starsContainer.classList.add('stars');
             illustration.appendChild(starsContainer);
 
-            // Erstelle initiale Sterne
-            for (let i = 0; i < 3; i++) {
-                createStar(starsContainer);
-            }
-
-            // Erstelle alle 0.5 Sekunden einen neuen Stern
-            setInterval(() => createStar(starsContainer), 500);
+            createStarsForIllustration(starsContainer, isMobile);
         });
     });
 })();
