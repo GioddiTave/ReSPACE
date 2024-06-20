@@ -134,7 +134,8 @@
         setupEventListeners();
         animateText(); // Call the animateText function to initialize text animations
 
-        const illustrationElements = document.querySelectorAll('.illustration');
+        // Füge den .hero-Abschnitt zu den Bereichen hinzu, in denen Sterne erscheinen
+        const illustrationElements = document.querySelectorAll('.illustration, .hero');
         const isMobile = window.innerWidth <= 768;
 
         illustrationElements.forEach(illustration => {
