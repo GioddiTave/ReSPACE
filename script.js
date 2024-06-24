@@ -29,20 +29,18 @@
             document.querySelector('.container').scrollLeft += e.deltaY;
         }, { passive: false });
 
-        document.addEventListener('touchstart', (e) => {
-            lastTouchPosition = e.touches[0].clientX;
+        document.addEventListener('touchstart', function(e) {
+            this.lastY = e.touches[0].clientY;
         }, { passive: false });
-
-        document.addEventListener('touchmove', (e) => {
+        
+        document.addEventListener('touchmove', function(e) {
+            var currentY = e.touches[0].clientY;
+            var deltaY = currentY - this.lastY;
+            this.lastY = currentY;
+        
+            // Scrollen des Containers horizontal basierend auf der vertikalen Bewegung
+            document.querySelector('.container').scrollLeft -= deltaY;
             e.preventDefault();
-            let currentTouch = e.touches[0].clientX;
-            touchScrollVelocity += (lastTouchPosition - currentTouch) * 0.2;
-            lastTouchPosition = currentTouch;
-            requestAnimationFrame(smoothTouchScroll);
-        }, { passive: false });
-
-        document.addEventListener('touchend', () => {
-            touchScrollVelocity = 0;
         }, { passive: false });
     }
 
