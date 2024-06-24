@@ -164,4 +164,56 @@
             observer.observe(element); // Beobachtet jedes h2 und h3 Element für den Sichtbarkeitseffekt
         });
     });
+
+/* })();
+ */
+
+let player;
+let volume = 50; // Initiale Lautstärke
+
+// Diese Funktion wird von der YouTube-API aufgerufen, wenn sie geladen wird.
+window.onYouTubeIframeAPIReady = function() {
+    player = new YT.Player('youtube-player', {
+        height: '0', // Höhe und Breite auf 0 setzen, um den Player unsichtbar zu machen
+        width: '0',
+        videoId: 'aBKEt3MhNMM', // Video-ID von YouTube Music
+        events: {
+            'onReady': onPlayerReady
+        },
+        playerVars: {
+            'autoplay': 1,
+            'loop': 1,
+            'playlist': 'aBKEt3MhNMM' // Video-ID für die Loop-Wiedergabe
+        }
+    });
+}
+
+// Diese Funktion wird aufgerufen, wenn der Player bereit ist.
+function onPlayerReady(event) {
+    event.target.setVolume(volume);
+    event.target.playVideo();
+}
+
+// Lautstärke anpassen, wenn zur Playlist gescrollt wird.
+function adjustVolumeOnScroll() {
+    const playlistSection = document.querySelector('.playlist-content');
+    const rect = playlistSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top >= 0 && rect.bottom <= windowHeight) {
+        // Sektion ist vollständig sichtbar
+        volume = 100;
+    } else {
+        // Sektion ist nicht vollständig sichtbar
+        volume = 50;
+    }
+    if (player && player.setVolume) {
+        player.setVolume(volume);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Event-Listener für das Scrollen hinzufügen
+    window.addEventListener('scroll', adjustVolumeOnScroll);
+});
 })();

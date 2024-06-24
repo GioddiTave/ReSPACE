@@ -218,7 +218,7 @@ html, body {
     display: flex;
     width: 100vw;
     height: 100vh;
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: hidden;
     flex-wrap: nowrap;
 }
@@ -659,7 +659,27 @@ html, body {
         z-index: 1500; 
     }
 
+    
 
+    #fullScreenImage {
+        position: fixed;
+        width: 100vw; /* Stellt die Breite auf 100% des Viewports ein */
+        height: 100vh; /* Änderung von 10vh auf 100vh */
+        display: none; /* Startet versteckt */
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5); /* Leicht transparenter Hintergrund */
+        z-index: 1000;
+        margin: 0; 
+        padding: 0;
+    }
+    
+    #fullScreenImage img {
+        width: 100vw; /* Bildbreite auf 100% setzen */
+        height: 100vh; /* Bildhöhe auf 100% setzen */
+        /* object-fit: cover; */ /* Bild skaliert, um den Container zu füllen */
+    }
+    
     
 
     .accent-text-scifi ,.accent-text p, .accent-text-by,.accent-text-nasa, .accent-text-music {
